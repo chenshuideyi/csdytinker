@@ -1,0 +1,16 @@
+{
+  "item.csdytinker.inarons": "残沙",
+  "material.csdytinker.inarons": "残沙",
+  "modifier.csdytinker.trinity": "三位一体",
+  "modifier.csdytinker.trinity.flavor": "三合一的戈伯达到了前所未有的固执",
+  "modifier.csdytinker.trinity.description": "每级降低60%各项属性",
+  "modifier.csdytinker.makeconcertedefforts":"同心协力",
+  "modifier.csdytinker.makeconcertedefforts.flavor": "三种戈伯联合起来为你的武器诞下了最沉重的诅咒",
+  "modifier.csdytinker.makeconcertedefforts.description": "工具初始时没有任何槽位，不可使用任何槽位槽。用此材料替换部件时将清空升级",
+  "modifier.csdytinker.triplingbless": "三重祝福",
+  "modifier.csdytinker.triplingbless.flavor": "屈服于你力量的戈伯颤抖着为你的工具咏颂祝福",
+  "modifier.csdytinker.triplingbless.description": "每级提升30%各项属性，若等级大于三，则每级提升60%各项属性",
+  "modifier.csdytinker.triplingcurse": "三重咒诅",
+  "modifier.csdytinker.triplingcurse.flavor":"被击溃的戈伯再也无力反抗，曾经深沉的诅咒如今为你所用",
+  "modifier.csdytinker.triplingcurse.description":"每级增加全槽位，每个不被占用的升级槽都会额外提供10%的全属性加成"
+}

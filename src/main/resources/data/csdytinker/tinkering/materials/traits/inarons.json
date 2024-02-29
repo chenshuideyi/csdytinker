@@ -1,0 +1,12 @@
+{
+  "default": [
+    {
+      "name": "csdytinker:mutation",
+      "level": 1
+    },
+    {
+      "name": "csdytinker:triplingcurse",
+      "level": 1
+    }
+  ]
+}
