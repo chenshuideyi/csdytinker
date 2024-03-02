@@ -22,10 +22,10 @@ public class ELivingEvent {
         if (event.getEntity() instanceof Player player) {
             if (player.hasEffect(MUTATION.get())) {
                 int Amplifier = (player.getEffect(MUTATION.get()).getAmplifier());
-                if (Amplifier >= 1){
+                if (Amplifier >= 15){
                     event.setCanceled(true);
                     player.heal(20);
-                    MobEffectInstance newEffect = new MobEffectInstance(MUTATION.get(),  Amplifier*20,  Amplifier*10);
+                    MobEffectInstance newEffect = new MobEffectInstance(MUTATION.get(),  Amplifier*20,  Amplifier-10);
                     player.removeEffect(MUTATION.get());
                     player.addEffect(newEffect);
                 }

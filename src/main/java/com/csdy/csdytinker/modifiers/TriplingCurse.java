@@ -34,16 +34,16 @@ public class TriplingCurse extends Modifier {
 
 
 
-        ToolStats.DRAW_SPEED.multiply(builder, 1 + 0.1 * level * number);
-            ToolStats.MINING_SPEED.multiply(builder, 1 + 0.1 * level * number);
-            ToolStats.DURABILITY.multiply(builder, 1 + 0.1 * level * number);
-            ToolStats.ATTACK_SPEED.multiply(builder, 1 + 0.1 * level * number);
-            ToolStats.ATTACK_DAMAGE.multiply(builder, 1 + 0.1 * level * number);
-            ToolStats.VELOCITY.multiply(builder, 1 + 0.1 * level * number);
-            ToolStats.ACCURACY.multiply(builder, 1 + 0.1 * level * number);
-            ToolStats.PROJECTILE_DAMAGE.multiply(builder, 1 + 0.1 * level * number);
-            ToolStats.ARMOR.multiply(builder, 1 + 0.2 * level * number);
-            ToolStats.ARMOR_TOUGHNESS.multiply(builder, 1 + 0.2 * level * number);
+        ToolStats.DRAW_SPEED.multiply(builder, 1 + 0.13  * number);
+            ToolStats.MINING_SPEED.multiply(builder, 1 + 0.13  * number);
+            ToolStats.DURABILITY.multiply(builder, 1 + 0.13  * number);
+            ToolStats.ATTACK_SPEED.multiply(builder, 1 + 0.13  * number);
+            ToolStats.ATTACK_DAMAGE.multiply(builder, 1 + 0.13 * number);
+            ToolStats.VELOCITY.multiply(builder, 1 + 0.13  * number);
+            ToolStats.ACCURACY.multiply(builder, 1 + 0.13  * number);
+            ToolStats.PROJECTILE_DAMAGE.multiply(builder, 1 + 0.13  * number);
+            ToolStats.ARMOR.multiply(builder, 1 + 0.13 * number);
+            ToolStats.ARMOR_TOUGHNESS.multiply(builder, 1 + 0.13 * number);
         }
     }
 

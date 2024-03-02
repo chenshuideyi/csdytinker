@@ -11,8 +11,13 @@ public class CsdyTinkerModifiers  {
     public static final StaticModifier<TrinityModifier> TRINITY_MODIFIER_STATIC_MODIFIER = MODIFIERS.register("trinity",TrinityModifier::new);
     public static final StaticModifier<MakeConcertedEfforts> MAKE_CONCERTED_EFFORTS_STATIC_MODIFIER = MODIFIERS.register("makeconcertedefforts",MakeConcertedEfforts::new);
     public static final StaticModifier<TriplingBless> TRIPLING_BLESS_STATIC_MODIFIER = MODIFIERS.register("triplingbless",TriplingBless::new);
-
     public static final StaticModifier<TriplingCurse> TRIPLING_CURSE_STATIC_MODIFIER = MODIFIERS.register("triplingcurse",TriplingCurse::new);
     public static final StaticModifier<Mutation> MUTATION_STATIC_MODIFIER = MODIFIERS.register("mutation",Mutation::new);
+    public static final StaticModifier<Void> VOID_STATIC_MODIFIER = MODIFIERS.register("void",Void::new);
+    public static final StaticModifier<Erase> ERASE_STATIC_MODIFIER = MODIFIERS.register("erase",Erase::new);
+    public static final StaticModifier<OverNatural> OVER_NATURAL_STATIC_MODIFIER = MODIFIERS.register("overnatural",OverNatural::new);
+    public static final StaticModifier<Gamble> GAMBLE_STATIC_MODIFIER = MODIFIERS.register("gamble",Gamble::new);
+    public static final StaticModifier<Forging> FORGING_STATIC_MODIFIER = MODIFIERS.register("forging",Forging::new);
+    public static final  StaticModifier<Quenching> QUENCHING_STATIC_MODIFIER = MODIFIERS.register("quenching",Quenching::new);
 
 }
