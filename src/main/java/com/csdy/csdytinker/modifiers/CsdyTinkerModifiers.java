@@ -19,5 +19,5 @@ public class CsdyTinkerModifiers  {
     public static final StaticModifier<Gamble> GAMBLE_STATIC_MODIFIER = MODIFIERS.register("gamble",Gamble::new);
     public static final StaticModifier<Forging> FORGING_STATIC_MODIFIER = MODIFIERS.register("forging",Forging::new);
     public static final  StaticModifier<Quenching> QUENCHING_STATIC_MODIFIER = MODIFIERS.register("quenching",Quenching::new);
-
+    public static final  StaticModifier<Test> TEST_STATIC_MODIFIER = MODIFIERS.register("test",Test::new);
 }

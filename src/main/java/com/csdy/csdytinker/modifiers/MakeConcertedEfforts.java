@@ -14,12 +14,12 @@ public class MakeConcertedEfforts extends NoLevelsModifier {
     public void addVolatileData(ToolRebuildContext context, int level, ModDataNBT volatileData) {
         IModDataView persistentData = context.getPersistentData();
         int number = persistentData.getSlots(SlotType.UPGRADE);
-        volatileData.addSlots(SlotType.UPGRADE, -number );
+        volatileData.addSlots(SlotType.UPGRADE, -number*10 );
         number = persistentData.getSlots(SlotType.ABILITY);
-        volatileData.addSlots(SlotType.ABILITY, -number);
+        volatileData.addSlots(SlotType.ABILITY, -number*10);
         if (context.hasTag(TinkerTags.Items.ARMOR)) {
             int numberd = persistentData.getSlots(SlotType.DEFENSE);
-            volatileData.addSlots(SlotType.DEFENSE, -numberd );
+            volatileData.addSlots(SlotType.DEFENSE, -numberd*10 );
         }
     }
 }
