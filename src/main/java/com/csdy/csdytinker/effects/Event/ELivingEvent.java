@@ -1,18 +1,13 @@
-package com.csdy.csdytinker.Effect.Event;
+package com.csdy.csdytinker.effects.Event;
 
-import net.minecraft.client.gui.font.glyphs.BakedGlyph;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
-import net.minecraftforge.event.entity.living.LivingHealEvent;
-import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import com.csdy.csdytinker.Effect.EffectsRegister;
-import com.csdy.csdytinker.CsdyTinker;
 import net.minecraftforge.fml.common.Mod;
 
 import static com.csdy.csdytinker.CsdyTinker.MOD_ID;
-import static com.csdy.csdytinker.Effect.EffectsRegister.MUTATION;
+import static com.csdy.csdytinker.effects.EffectsRegister.MUTATION;
 
 @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 

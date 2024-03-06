@@ -143,6 +143,10 @@ repositories {
         name 'DVS1 Maven FS'
         url 'https://dvs1.progwml6.com/files/maven'
     }
+    maven { //GeckoLib
+        name = 'GeckoLib'
+        url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'
+    }
 }
 
 dependencies {
@@ -151,7 +155,15 @@ dependencies {
     implementation fg.deobf("slimeknights.mantle:Mantle:1.18.2-${mantle_version}")
     implementation fg.deobf("mezz.jei:jei-${minecraft_version}:${jei_version}")
 
+    //lombok
+    compileOnly 'org.projectlombok:lombok:1.18.30'
+    annotationProcessor 'org.projectlombok:lombok:1.18.30'
 
+    testCompileOnly 'org.projectlombok:lombok:1.18.30'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.30'
+
+    //GeckoLib
+    implementation fg.deobf('software.bernie.geckolib:geckolib-forge-1.18:3.0.57')
 
 
 

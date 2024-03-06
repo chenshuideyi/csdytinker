@@ -1,4 +1,11 @@
 {
+  "message.csdytinker.agent_ready_": "侦测到在途轨道打击",
+  "message.csdytinker.agent_ready_self": "天堂之矛已装载",
+  "message.csdytinker.agent_shot": "",
+  "message.csdytinker.agent_shot_self": "",
+  "message.csdytinker.agent_star_shot": "",
+  "message.csdytinker.agent_star_shot_self": "",
+
   "item.csdytinker.inarons": "残沙",
 
   "modifier.csdytinker.trinity": "三位一体",
@@ -13,6 +20,7 @@
   "modifier.csdytinker.triplingcurse": "三重咒诅",
   "modifier.csdytinker.triplingcurse.flavor":"被击溃的戈伯再也无力反抗，曾经深沉的诅咒如今为你所用",
   "modifier.csdytinker.triplingcurse.description":"每级增加全槽位，每个升级槽都会额外提供13%的全属性加成",
+
   "modifier.csdytinker.erase": "抹消",
   "modifier.csdytinker.erase.flavor":"伴随轻描淡写地划过，眸中的存在于记忆中消逝了",
   "modifier.csdytinker.erase.description": "造成伤害时，额外附加对方目前生命值10%的虚空伤害",
@@ -34,9 +42,16 @@
   "modifier.csdytinker.forging": "锻材",
   "modifier.csdytinker.forging.flavor": "任尔东西南北风",
   "modifier.csdytinker.forging.description": "每级提升10%工具全属性",
+
   "modifier.csdytinker.agent": "“陨星”轨道打击系统",
   "modifier.csdytinker.agent.flavor": "天堂之矛已装载",
-  "modifier.csdytinker.agent.description": "内置轨道定位系统，射出的箭矢受到冲击后会引导MK1-“陨星”轨道卫星降下精准的轨道热能打击\n",
+  "modifier.csdytinker.agent.description": "内置轨道定位系统，射出的箭矢受到冲击后会开始引导MK1-“陨星”轨道卫星降下精准的轨道热能打击\n",
+  "modifier.csdytinker.mk1": "MK-1",
+  "modifier.csdytinker.mk1.flavor": "警告：热能整流模块未实装",
+  "modifier.csdytinker.too_expensive": "过于昂贵",
+  "modifier.csdytinker.too_expensive.flavor": "铁证如山！",
+  "modifier.csdytinker.too_expensive.description": "迷你间谍你自己写吧\n",
+
   "modifier.csdytinker.test1": "哥本哈根",
   "modifier.csdytinker.test1.flavor": "上帝也许会掷骰子",
   "material.csdytinker.inarons": "测试残沙",

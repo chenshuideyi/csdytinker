@@ -1,6 +1,5 @@
-package com.csdy.csdytinker.Effect;
+package com.csdy.csdytinker.effects;
 
-import com.csdy.csdytinker.Effect.Mutation;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
