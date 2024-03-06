@@ -1,5 +1,5 @@
 package com.csdy.csdytinker;
- import com.csdy.csdytinker.modifiers.CsdyTinkerModifiers;
+ import com.csdy.csdytinker.modifiers.ModifiersRegister;
  import net.minecraft.data.DataGenerator;
  import net.minecraftforge.common.MinecraftForge;
  import net.minecraftforge.common.data.ExistingFileHelper;
@@ -7,7 +7,6 @@ package com.csdy.csdytinker;
  import net.minecraftforge.fml.common.Mod;
  import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
  import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
- import com.csdy.csdytinker.modifiers.TrinityModifier;
  import com.csdy.csdytinker.Effect.EffectsRegister;
  import com.csdy.csdytinker.Effect.Event.ELivingEvent;
 
@@ -21,7 +20,7 @@ public class CsdyTinker {
     public CsdyTinker() {
         IEventBus Bus = FMLJavaModLoadingContext.get().getModEventBus();
         Items.ITEMS.register(Bus);
-        CsdyTinkerModifiers.MODIFIERS.register(Bus);
+        ModifiersRegister.MODIFIERS.register(Bus);
         EffectsRegister.EFFECT.register(Bus);
         MinecraftForge.EVENT_BUS.register(new ELivingEvent());
     }
