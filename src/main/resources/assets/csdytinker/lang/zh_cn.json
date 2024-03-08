@@ -1,10 +1,5 @@
 {
-  "message.csdytinker.agent_ready_": "侦测到在途轨道打击",
-  "message.csdytinker.agent_ready_self": "天堂之矛已装载",
-  "message.csdytinker.agent_shot": "",
-  "message.csdytinker.agent_shot_self": "",
-  "message.csdytinker.agent_star_shot": "",
-  "message.csdytinker.agent_star_shot_self": "",
+
 
   "item.csdytinker.inarons": "残沙",
 
@@ -45,16 +40,25 @@
 
   "modifier.csdytinker.agent": "“陨星”轨道打击系统",
   "modifier.csdytinker.agent.flavor": "天堂之矛已装载",
-  "modifier.csdytinker.agent.description": "内置轨道定位系统，射出的箭矢受到冲击后会开始引导MK1-“陨星”轨道卫星降下精准的轨道热能打击\n",
+  "modifier.csdytinker.agent.description": "内置轨道定位系统，射出的箭矢受到冲击后会开始引导MK1-“陨星”轨道卫星降下精准的轨道热能打击",
   "modifier.csdytinker.mk1": "MK-1",
   "modifier.csdytinker.mk1.flavor": "警告：热能整流模块未实装",
   "modifier.csdytinker.too_expensive": "过于昂贵",
-  "modifier.csdytinker.too_expensive.flavor": "铁证如山！",
-  "modifier.csdytinker.too_expensive.description": "迷你间谍你自己写吧\n",
+  "modifier.csdytinker.too_expensive.flavor": "每次打击耗费巨量资金",
+  "modifier.csdytinker.too_expensive.description": "总计：23662.22绿宝石",
 
   "modifier.csdytinker.test1": "哥本哈根",
   "modifier.csdytinker.test1.flavor": "上帝也许会掷骰子",
   "material.csdytinker.inarons": "测试残沙",
   "material.csdytinker.inarons.flavor": "仅测试。",
-  "material.csdytinker.inarons.encyclopedia": "仅测试，无法使用"
+  "material.csdytinker.inarons.encyclopedia": "仅测试，无法使用",
+
+  "material.kubejs.trinitygobber.flavor": "神灵般巅峰造极的完美戈伯",
+  "material.kubejs.trinitygobber.encyclopedia": "三种力量合而为一，戈伯神力融合后的最完美形态。“我已达顶点，往后只有衰落”",
+  "material.kubejs.failed_gobbers.flavor": "被折翼亵渎的残次戈伯",
+  "material.kubejs.failed_gobbers.encyclopedia": "杂糅的残次品，充斥着不纯之物的劣等货。拥有对三位一体神力十不存一的拙劣模仿",
+
+  "modifier.csdytinker.kagutsuchi": "炎遁·加具土命",
+  "modifier.csdytinker.kagutsuchi.flavor": "この術は絶対にかわすことが出来ない!",
+  "modifier.csdytinker.kagutsuchi.description": "按下shift+右键为你的武器附上在目标被燃尽前不会消失的黑炎"
 }
