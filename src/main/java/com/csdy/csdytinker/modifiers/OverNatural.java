@@ -21,6 +21,7 @@ import javax.annotation.Nullable;
 
 
     public class OverNatural extends Modifier implements ProjectileHitModifierHook {
+         //超自然
         @Override
         public int afterEntityHit(IToolStackView tool, int level, ToolAttackContext context, float damageDealt) {
 

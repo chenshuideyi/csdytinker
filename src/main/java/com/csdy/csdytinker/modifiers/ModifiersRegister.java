@@ -23,5 +23,6 @@ public class ModifiersRegister {
     public static final StaticModifier<NoLevelsModifier> MK1_STATIC_MODIFIER = MODIFIERS.register("mk1", NoLevelsModifier::new);
     public static final StaticModifier<NoLevelsModifier> TOO_EXPENSIVE_STATIC_MODIFIER = MODIFIERS.register("too_expensive", NoLevelsModifier::new);
     public static final StaticModifier<Kagutsuchi> KAGUTSUCHI_STATIC_MODIFIER = MODIFIERS.register("kagutsuchi", Kagutsuchi::new);
+    public static final StaticModifier<ShatteredDreams> SHATTERED_DREAMS_STATIC_MODIFIER = MODIFIERS.register("shatteredDreams",ShatteredDreams::new);
 
 }

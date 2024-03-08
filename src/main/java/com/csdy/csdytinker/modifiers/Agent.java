@@ -22,6 +22,7 @@ import slimeknights.tconstruct.library.tools.nbt.NamespacedNBT;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class Agent extends NoLevelsModifier implements ProjectileHitModifierHook {
+    //陨星
     @Override
     public boolean onProjectileHitBlock(ModifierNBT modifiers, NamespacedNBT persistentData,
                                         ModifierEntry modifier, Projectile projectile, BlockHitResult hit, @Nullable LivingEntity attacker) {

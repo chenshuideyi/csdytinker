@@ -8,16 +8,17 @@ import slimeknights.tconstruct.library.tools.stat.ToolStats;
 public class Forging extends Modifier {
     @Override
     public void addToolStats(ToolRebuildContext context, int level, ModifierStatsBuilder builder) {
-            ToolStats.DRAW_SPEED.multiply(builder, 1 * 0.1 * level);
-            ToolStats.MINING_SPEED.multiply(builder, 1 * 0.1 * level);
-            ToolStats.DURABILITY.multiply(builder, 1 * 0.1 * level);
-            ToolStats.ATTACK_SPEED.multiply(builder, 1 * 0.1 * level);
-            ToolStats.ATTACK_DAMAGE.multiply(builder, 1 * 0.1 * level);
-            ToolStats.VELOCITY.multiply(builder, 1 * 0.1 * level);
-            ToolStats.ACCURACY.multiply(builder, 1 * 0.1 * level);
-            ToolStats.PROJECTILE_DAMAGE.multiply(builder, 1 * 0.1 * level);
-            ToolStats.ARMOR.multiply(builder, 1 * 0.1 * level);
-            ToolStats.ARMOR_TOUGHNESS.multiply(builder, 1 * 0.1 * level);
+        //锻材
+            ToolStats.DRAW_SPEED.multiply(builder, 1 + (0.1 * level));
+            ToolStats.MINING_SPEED.multiply(builder, 1 + (0.1 * level));
+            ToolStats.DURABILITY.multiply(builder, 1 + (0.1 * level));
+            ToolStats.ATTACK_SPEED.multiply(builder, 1 + (0.1 * level));
+            ToolStats.ATTACK_DAMAGE.multiply(builder, 1 + (0.1 * level));
+            ToolStats.VELOCITY.multiply(builder, 1 + (0.1 * level));
+            ToolStats.ACCURACY.multiply(builder, 1 + (0.1 * level));
+            ToolStats.PROJECTILE_DAMAGE.multiply(builder, 1 + (0.1 * level));
+            ToolStats.ARMOR.multiply(builder, 1 + (0.1 * level));
+            ToolStats.ARMOR_TOUGHNESS.multiply(builder, 1 + (0.1 * level));
 
         }
     }

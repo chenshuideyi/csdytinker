@@ -20,6 +20,7 @@ import javax.annotation.Nullable;
 
 
 public class Quenching extends Modifier implements ProjectileHitModifierHook {
+    //火淬
    @Override
     public float getEntityDamage(@Nonnull IToolStackView tool, int level,  @Nonnull ToolAttackContext context, float baseDamage, float damage) {
         LivingEntity target = context.getLivingTarget();

@@ -24,6 +24,8 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 public class Erase extends NoLevelsModifier implements ProjectileHitModifierHook{
+    //抹削
+
 
     @Override
     public float getEntityDamage(@Nonnull IToolStackView tool, int level, @Nonnull ToolAttackContext context, float baseDamage, float damage) {

@@ -19,6 +19,7 @@ import javax.annotation.Nullable;
 
 
     public class Void extends Modifier implements ProjectileHitModifierHook {
+        //超魔法
         @Override
         public int afterEntityHit(IToolStackView tool, int level, ToolAttackContext context, float damageDealt) {
 
