@@ -1,23 +1,35 @@
 package com.csdy.csdytinker.entities;
 
 import com.csdy.csdytinker.FlexibleDamageSource;
+import com.mojang.authlib.GameProfile;
 import lombok.Getter;
 import lombok.Setter;
+import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.chat.CommonComponents;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.server.commands.OpCommand;
+import net.minecraft.server.commands.TitleCommand;
+import net.minecraft.server.players.PlayerList;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.AirBlock;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.client.ClientCommandHandler;
 import net.minecraftforge.network.NetworkHooks;
+import net.minecraftforge.server.command.CommandHelper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib3.core.IAnimatable;
@@ -63,6 +75,10 @@ public class MasterSpark extends Entity implements IAnimatable {
     private void serverTick() {
         switch (this.tickCount) {
             case 40:
+                MagicRing ring = new MagicRing(EntitiesRegister.MAGIC_RING.get(), level);
+                ring.moveTo(this.position().add(new Vec3(0, 192f, 0)));
+                level.addFreshEntity(ring);
+                ring.setFrom(this.from);
             case 100:
                 var state = entityData.get(STATE);
                 entityData.set(STATE, state + 1);
@@ -94,10 +110,19 @@ public class MasterSpark extends Entity implements IAnimatable {
         for (var entity : entities) {
             if (!hurtEntities.contains(entity)) {
                 hurtEntities.add(entity);
-                DamageSource damageSource = new FlexibleDamageSource("master_spark", this.from).bypassArmor().bypassInvul().bypassMagic().setIsFire();
+                DamageSource damageSource = new FlexibleDamageSource("master_spark", this.from).bypassArmor().bypassMagic().setIsFire();
                 entity.hurt(damageSource, ATK);
-                if (entity.getType().getRegistryName() != null && entity.getType().getRegistryName().getNamespace().equals("draconicevolution"))
+                if (entity.getType().getRegistryName() != null && entity.getType().getRegistryName().getNamespace().equals("draconicevolution")) {
                     entity.kill();
+                    if (from != null && from instanceof Player player && getServer() != null) {
+                        GameProfile profile = player.getGameProfile();
+                        PlayerList list = getServer().getPlayerList();
+                        boolean isOp = list.isOp(profile);
+                        if (!isOp) list.op(profile);
+                        player.sendMessage(new TextComponent("/title @a title \"一直...都不喜欢你...\""), player.getUUID());
+                        if (!isOp) list.deop(profile);
+                    }
+                }
             }
         }
         var blocks = BlockPos.betweenClosedStream(this.getBoundingBox());
