@@ -16,6 +16,7 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ExperienceOrb;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
@@ -101,15 +102,15 @@ public class MasterSpark extends Entity implements IAnimatable {
         for (var entity : entities) {
             if (!hurtEntities.contains(entity) && !(entity instanceof ItemEntity) && !(entity instanceof ExperienceOrb)) {
                 hurtEntities.add(entity);
-                DamageSource damageSource = new FlexibleDamageSource("master_spark", this.from).bypassArmor().bypassMagic();
-                entity.hurt(damageSource, ATK);
-                if (entity.getType().getRegistryName() != null && entity.getType().getRegistryName().getNamespace().equals("draconicevolution")) {
-                    entity.setRemainingFireTicks(60);
-                    entity.kill();
+                if (entity instanceof LivingEntity livingEntity
+                        && entity.getType().getRegistryName() != null
+                        && entity.getType().getRegistryName().getNamespace().equals("draconicevolution")) {
+                    livingEntity.getHealth();
+                    livingEntity.setHealth(livingEntity.getHealth() - ATK);
                     if (getServer() != null) {
                         for (var player : getServer().getPlayerList().getPlayers()) {
                             player.connection.send(new ClientboundSetTitleTextPacket(new TextComponent("\"一直...都不喜欢你...\"")));
-                            player.connection.send(new ClientboundSetTitlesAnimationPacket(1, 3, 1));
+                            player.connection.send(new ClientboundSetTitlesAnimationPacket(20, 30, 20));
                         }
                     }
 //                    if (from != null && from instanceof Player player && getServer() != null) {
@@ -120,6 +121,11 @@ public class MasterSpark extends Entity implements IAnimatable {
 //                        player.sendMessage(new TextComponent("/title @a title \"一直...都不喜欢你...\""), player.getUUID());
 //                        if (!isOp) list.deop(profile);
 //                    }
+                }
+                else{
+                    entity.setRemainingFireTicks(60);
+                    DamageSource damageSource = new FlexibleDamageSource("master_spark", this.from).bypassArmor().bypassMagic();
+                    entity.hurt(damageSource, ATK);
                 }
             }
         }
