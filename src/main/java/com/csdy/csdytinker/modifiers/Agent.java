@@ -26,7 +26,6 @@ public class Agent extends NoLevelsModifier implements ProjectileHitModifierHook
     @Override
     public boolean onProjectileHitBlock(ModifierNBT modifiers, NamespacedNBT persistentData,
                                         ModifierEntry modifier, Projectile projectile, BlockHitResult hit, @Nullable LivingEntity attacker) {
-        Minecraft.getInstance().getCurrentServer();
 
         return true;
     }
