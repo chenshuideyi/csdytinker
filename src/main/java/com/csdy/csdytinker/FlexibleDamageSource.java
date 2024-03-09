@@ -1,5 +1,7 @@
 package com.csdy.csdytinker;
 
+import lombok.Getter;
+import lombok.Setter;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.TranslatableComponent;
@@ -14,6 +16,15 @@ import org.jetbrains.annotations.Nullable;
 //自定义死亡文本，默认death.attack.{你设置的伤害类型}，无来源后缀.sourceless，自杀后缀.suicide，凶器有自定义名字时额外后缀.item
 //写文本时%1$s-死者，%2$s-伤害来源，%3$s凶器名字
 public class FlexibleDamageSource extends DamageSource {
+
+    @Getter
+    private boolean bypassEverything = false;
+
+    public FlexibleDamageSource bypassEverything() {
+        this.bypassEverything = true;
+        return this;
+    }
+
     public FlexibleDamageSource(String msgId) {
         this(msgId, null);
     }
