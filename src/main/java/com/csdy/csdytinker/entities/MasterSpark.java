@@ -1,27 +1,20 @@
 package com.csdy.csdytinker.entities;
 
-import com.csdy.csdytinker.CsdyTinker;
+import com.csdy.csdytinker.FlexibleDamageSource;
 import lombok.Getter;
 import lombok.Setter;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.Packet;
-import net.minecraft.network.protocol.game.ClientboundAddEntityPacket;
+import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.client.event.EntityRenderersEvent;
-import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
-import net.minecraftforge.event.entity.living.LivingEntityUseItemEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.network.NetworkHooks;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import software.bernie.geckolib3.core.AnimationState;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
@@ -29,48 +22,79 @@ import software.bernie.geckolib3.core.controller.AnimationController;
 import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
-import software.bernie.geckolib3.core.manager.InstancedAnimationFactory;
 import software.bernie.geckolib3.util.GeckoLibUtil;
 
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.ScheduledThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
-import java.util.logging.LogManager;
-import java.util.logging.Logger;
+import java.util.ArrayList;
+import java.util.List;
 
-@Mod.EventBusSubscriber(value = Dist.CLIENT, modid = CsdyTinker.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class MasterSpark extends Entity implements IAnimatable {
-    private final ScheduledExecutorService executor = Executors.newScheduledThreadPool(1);
 
     public MasterSpark(EntityType<?> entityType, Level level) {
         super(entityType, level);
-        executor.schedule(this::nextStage, 1, TimeUnit.SECONDS);
     }
 
-    //魔炮
     private static final int ATK = 50000;
-    private int stage = 0;
+
     @Nullable
     @Getter
     @Setter
-    private LivingEntity target = null;
+    private Entity target = null;
+    @Nullable
+    @Getter
+    @Setter
+    private Entity from = null;
 
-    private void nextStage() {
-        stage++;
-        executor.schedule(this::nextStage, 2, TimeUnit.SECONDS);
-    }
+    private List<Entity> hurtEntities = new ArrayList<>();
+
+    private static final EntityDataAccessor<Integer> STATE = SynchedEntityData.defineId(MasterSpark.class, EntityDataSerializers.INT);
 
     @Override
     public void tick() {
-        if (stage > 2) this.kill();
         super.tick();
+        if (getLevel().isClientSide) clientTick();
+        else serverTick();
+    }
+
+    private void serverTick() {
+        switch (this.tickCount) {
+            case 40:
+            case 100:
+                var state = entityData.get(STATE);
+                entityData.set(STATE, state + 1);
+                break;
+            case 48:
+                getBoundingBox().deflate(1, 0, 1);
+                break;
+        }
+        switch (entityData.get(STATE)) {
+            case 0:
+                if (target != null && target.getLevel() == this.level)
+                    this.setPos(target.position());
+                break;
+            case 1:
+                var entities = getLevel().getEntities(this, getBoundingBox());
+                for (var entity : entities) {
+                    if (!hurtEntities.contains(entity)) {
+                        hurtEntities.add(entity);
+                        DamageSource damageSource = new FlexibleDamageSource("master_spark", this.from).bypassArmor().bypassInvul().bypassMagic();
+                        entity.hurt(damageSource, ATK);
+                    }
+                }
+                break;
+            case 2:
+                this.discard();
+                break;
+        }
+    }
+
+    private void clientTick() {
+
     }
 
     //Entity
     @Override
     protected void defineSynchedData() {
-
+        this.entityData.define(STATE, 0);
     }
 
     @Override
@@ -87,17 +111,15 @@ public class MasterSpark extends Entity implements IAnimatable {
     }
 
     //IAnimatable
-    protected static final AnimationBuilder ANIM_READY = new AnimationBuilder().addAnimation("Ready");
-    protected static final AnimationBuilder ANIM_SHOT = new AnimationBuilder().addAnimation("Shot");
-    protected static final AnimationBuilder ANIM_FINISH = new AnimationBuilder().addAnimation("Finish");
-    protected static final AnimationBuilder ANIM_STATIC = new AnimationBuilder().addAnimation("Static");
+    protected static final AnimationBuilder ANIM_PRESHOT = new AnimationBuilder().addAnimation("animation.spark.preshot");
+    protected static final AnimationBuilder ANIM_SHOT = new AnimationBuilder().addAnimation("animation.spark.shot");
+    protected static final AnimationBuilder ANIM_IDLE = new AnimationBuilder().addAnimation("animation.spark.idle");
 
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
-        AnimationBuilder animation = switch (this.stage) {
-            case 0 -> ANIM_READY;
+        AnimationBuilder animation = switch (entityData.get(STATE)) {
+            case 0 -> ANIM_PRESHOT;
             case 1 -> ANIM_SHOT;
-            case 2 -> ANIM_FINISH;
-            default -> ANIM_STATIC;
+            default -> ANIM_IDLE;
         };
         event.getController().setAnimation(animation);
         return PlayState.CONTINUE;
@@ -107,18 +129,18 @@ public class MasterSpark extends Entity implements IAnimatable {
 
     @Override
     public void registerControllers(AnimationData data) {
-        data.addAnimationController(new AnimationController(this, "controller", 0, this::predicate));
+//        ICustomInstructionListener<MasterSpark> listener = (event) -> {
+//            int s = entityData.get(STATE);
+//            this.entityData.set(STATE, s + 1);
+//        };
+        AnimationController<MasterSpark> controller = new AnimationController<>(this, "controller", 0, this::predicate);
+//        controller.registerCustomInstructionListener(listener);
+        data.addAnimationController(controller);
+
     }
 
     @Override
     public AnimationFactory getFactory() {
         return animationFactory;
-    }
-
-    //Event
-    @SubscribeEvent
-    public static void onRegisterRenderer(EntityRenderersEvent.RegisterRenderers event) {
-        //添加渲染注册语句
-        event.registerEntityRenderer(EntitiesRegister.MASTER_SPARK.get(), MasterSparkRender::new);
     }
 }

@@ -1,32 +1,44 @@
 {
+  "entity.csdytinker.master_spark": "天堂之矛",
+  "death.attack.master_spark": "%1$s 被 %2$s 引导的天堂之矛贯穿",
+  "death.attack.master_spark.item": "%1$s 被 %2$s 使用 %3$s 引导的天堂之矛贯穿",
+  "death.attack.master_spark.sourceless": "%1$s 被天堂之矛贯穿",
+  "death.attack.master_spark.suicide": "%1$s 瞠目于光中",
+  "death.attack.master_spark.suicide.item": "%1$s 在研习 %3$s 时瞠目于光中",
 
+  "entity.csdytinker.fallen_star": "幻想星尘",
+  "death.attack.fallen_star": "%1$s 在闪避 %2$s 召唤的幻想星尘时不慎满身疮痍",
+  "death.attack.fallen_star.item": "%1$s 在闪避 %2$s 的 %3$s·幻想星尘 时不慎满身疮痍",
+  "death.attack.fallen_star.sourceless": "%1$s 在闪避幻想星尘时不慎满身疮痍",
+  "death.attack.fallen_star.suicide": "%1$s 近距离欣赏了一场流星雨",
+  "death.attack.fallen_star.suicide.item": "%1$s 通过 %3$s 近距离欣赏了一场流星雨",
 
   "item.csdytinker.inarons": "残沙",
 
   "modifier.csdytinker.trinity": "三位一体",
   "modifier.csdytinker.trinity.flavor": "三合一的戈伯达到了心意相通的境界",
   "modifier.csdytinker.trinity.description": "每级给予你的工具40%全属性修正",
-  "modifier.csdytinker.makeconcertedefforts":"同心协力",
+  "modifier.csdytinker.makeconcertedefforts": "同心协力",
   "modifier.csdytinker.makeconcertedefforts.flavor": "三种戈伯联合起来为你的武器诞下了诅咒之力",
   "modifier.csdytinker.makeconcertedefforts.description": "使你的工具所有槽位都响应戈伯高傲力量的召唤",
   "modifier.csdytinker.triplingbless": "三重祝福",
   "modifier.csdytinker.triplingbless.flavor": "屈服于你力量的戈伯颤抖着为你的工具咏颂祝福",
   "modifier.csdytinker.triplingbless.description": "每级提升30%各项属性，若等级大于三，则每级提升60%各项属性",
   "modifier.csdytinker.triplingcurse": "三重咒诅",
-  "modifier.csdytinker.triplingcurse.flavor":"被击溃的戈伯再也无力反抗，曾经深沉的诅咒如今为你所用",
-  "modifier.csdytinker.triplingcurse.description":"每级增加全槽位，每个升级槽都会额外提供13%的全属性加成",
+  "modifier.csdytinker.triplingcurse.flavor": "被击溃的戈伯再也无力反抗，曾经深沉的诅咒如今为你所用",
+  "modifier.csdytinker.triplingcurse.description": "每级增加全槽位，每个升级槽都会额外提供13%的全属性加成",
 
   "modifier.csdytinker.erase": "抹消",
-  "modifier.csdytinker.erase.flavor":"伴随轻描淡写地划过，眸中的存在于记忆中消逝了",
+  "modifier.csdytinker.erase.flavor": "伴随轻描淡写地划过，眸中的存在于记忆中消逝了",
   "modifier.csdytinker.erase.description": "造成伤害时，额外附加对方目前生命值10%的虚空伤害",
   "modifier.csdytinker.overnatural": "超自然",
-  "modifier.csdytinker.overnatural.flavor":"魔法的力量",
-  "modifier.csdytinker.overnatural.description":"攻击时额外造成魔法伤害",
+  "modifier.csdytinker.overnatural.flavor": "魔法的力量",
+  "modifier.csdytinker.overnatural.description": "攻击时额外造成魔法伤害",
   "modifier.csdytinker.void": "超魔法",
   "modifier.csdytinker.void.flavor": "虚空的力量",
   "modifier.csdytinker.void.description": "攻击时额外造成虚空伤害",
-  "modifier.csdytinker.overvoid":"超虚空",
-  "modifier.csdytinker.overvoid.flavor":"物理的力量",
+  "modifier.csdytinker.overvoid": "超虚空",
+  "modifier.csdytinker.overvoid.flavor": "物理的力量",
   "modifier.csdytinker.overvoid.description": "攻击时额外造成物理伤害",
   "modifier.csdytinker.gamble": "赌博",
   "modifier.csdytinker.gamble.flavor": "二分之一的概率，成王或是败寇",
@@ -60,7 +72,5 @@
 
   "modifier.csdytinker.kagutsuchi": "炎遁·加具土命",
   "modifier.csdytinker.kagutsuchi.flavor": "この術は絶対にかわすことが出来ない!",
-  "modifier.csdytinker.kagutsuchi.description": "按下shift+右键为你的武器附上在目标被燃尽前不会消失的黑炎",
-
-
+  "modifier.csdytinker.kagutsuchi.description": "按下shift+右键为你的武器附上在目标被燃尽前不会消失的黑炎"
 }

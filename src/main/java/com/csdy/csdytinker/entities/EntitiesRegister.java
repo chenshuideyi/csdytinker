@@ -11,6 +11,6 @@ import net.minecraftforge.registries.RegistryObject;
 public class EntitiesRegister {
     public static final DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(ForgeRegistries.ENTITIES, CsdyTinker.MOD_ID);
     public static final RegistryObject<EntityType<MasterSpark>> MASTER_SPARK = ENTITY_TYPES.register("master_spark",
-            () -> EntityType.Builder.of(MasterSpark::new, MobCategory.MONSTER).sized(1f, 1.8f).setTrackingRange(20)
+            () -> EntityType.Builder.of(MasterSpark::new, MobCategory.MISC).sized(2.5f, 1024f).setTrackingRange(20)
                     .build(new ResourceLocation(CsdyTinker.MOD_ID, "master_spark").toString()));
 }
