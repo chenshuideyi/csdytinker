@@ -13,4 +13,7 @@ public class EntitiesRegister {
     public static final RegistryObject<EntityType<MasterSpark>> MASTER_SPARK = ENTITY_TYPES.register("master_spark",
             () -> EntityType.Builder.of(MasterSpark::new, MobCategory.MISC).sized(2.5f, 1024f).setTrackingRange(20)
                     .build(new ResourceLocation(CsdyTinker.MOD_ID, "master_spark").toString()));
+    public static final RegistryObject<EntityType<MagicRing>> MAGIC_RING = ENTITY_TYPES.register("magic_ring",
+            () -> EntityType.Builder.of(MagicRing::new, MobCategory.MISC).sized(1024f, 16f).setTrackingRange(20)
+                    .build(new ResourceLocation(CsdyTinker.MOD_ID, "master_spark").toString()));
 }
