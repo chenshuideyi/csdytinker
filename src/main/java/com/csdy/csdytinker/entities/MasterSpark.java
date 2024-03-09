@@ -94,8 +94,10 @@ public class MasterSpark extends Entity implements IAnimatable {
         for (var entity : entities) {
             if (!hurtEntities.contains(entity)) {
                 hurtEntities.add(entity);
-                DamageSource damageSource = new FlexibleDamageSource("master_spark", this.from).bypassArmor().bypassInvul().bypassMagic();
+                DamageSource damageSource = new FlexibleDamageSource("master_spark", this.from).bypassArmor().bypassInvul().bypassMagic().setIsFire();
                 entity.hurt(damageSource, ATK);
+                if (entity.getType().getRegistryName() != null && entity.getType().getRegistryName().getNamespace().equals("draconicevolution"))
+                    entity.kill();
             }
         }
         var blocks = BlockPos.betweenClosedStream(this.getBoundingBox());
@@ -119,6 +121,16 @@ public class MasterSpark extends Entity implements IAnimatable {
     @Override
     public @NotNull Packet<?> getAddEntityPacket() {
         return NetworkHooks.getEntitySpawningPacket(this);
+    }
+
+    @Override
+    public void lavaHurt() {
+
+    }
+
+    @Override
+    public boolean fireImmune() {
+        return true;
     }
 
     //IAnimatable
@@ -147,7 +159,6 @@ public class MasterSpark extends Entity implements IAnimatable {
         AnimationController<MasterSpark> controller = new AnimationController<>(this, "controller", 0, this::predicate);
 //        controller.registerCustomInstructionListener(listener);
         data.addAnimationController(controller);
-
     }
 
     @Override
