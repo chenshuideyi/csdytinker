@@ -1,11 +1,9 @@
 package com.csdy.csdytinker.entities;
 
-import com.ibm.icu.text.CaseMap;
 import lombok.Getter;
 import lombok.Setter;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.Packet;
-import net.minecraft.server.commands.TitleCommand;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.Level;
@@ -43,7 +41,7 @@ public class MagicRing extends Entity implements IAnimatable {
     }
 
     private void serverTick() {
-
+        if (tickCount > 200) discard();
     }
 
     //Entity
@@ -74,10 +72,10 @@ public class MagicRing extends Entity implements IAnimatable {
 
     //IAnimatable
 
+    protected static final AnimationBuilder ANIM_INCREASE = new AnimationBuilder().addAnimation("animation.ring.increase");
+
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
-        //AnimationBuilder animation = new AnimationBuilder();
-        //↑重写记得
-        //event.getController().setAnimation(animation);
+        event.getController().setAnimation(ANIM_INCREASE);
         return PlayState.CONTINUE;
     }
 

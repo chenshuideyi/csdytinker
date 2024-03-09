@@ -4,32 +4,24 @@ import com.csdy.csdytinker.FlexibleDamageSource;
 import com.mojang.authlib.GameProfile;
 import lombok.Getter;
 import lombok.Setter;
-import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.chat.CommonComponents;
-import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
-import net.minecraft.server.commands.OpCommand;
-import net.minecraft.server.commands.TitleCommand;
 import net.minecraft.server.players.PlayerList;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.ExperienceOrb;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.AirBlock;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.client.ClientCommandHandler;
 import net.minecraftforge.network.NetworkHooks;
-import net.minecraftforge.server.command.CommandHelper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib3.core.IAnimatable;
@@ -67,7 +59,7 @@ public class MasterSpark extends Entity implements IAnimatable {
 
     @Override
     public void tick() {
-        super.tick();
+        //super.tick();
         if (getLevel().isClientSide) clientTick();
         else serverTick();
     }
@@ -108,11 +100,12 @@ public class MasterSpark extends Entity implements IAnimatable {
     private void shotTick() {
         var entities = getLevel().getEntities(this, getBoundingBox());
         for (var entity : entities) {
-            if (!hurtEntities.contains(entity)) {
+            if (!hurtEntities.contains(entity) && !(entity instanceof ItemEntity) && !(entity instanceof ExperienceOrb)) {
                 hurtEntities.add(entity);
-                DamageSource damageSource = new FlexibleDamageSource("master_spark", this.from).bypassArmor().bypassMagic().setIsFire();
+                DamageSource damageSource = new FlexibleDamageSource("master_spark", this.from).bypassArmor().bypassMagic();
                 entity.hurt(damageSource, ATK);
                 if (entity.getType().getRegistryName() != null && entity.getType().getRegistryName().getNamespace().equals("draconicevolution")) {
+                    entity.setRemainingFireTicks(60);
                     entity.kill();
                     if (from != null && from instanceof Player player && getServer() != null) {
                         GameProfile profile = player.getGameProfile();
