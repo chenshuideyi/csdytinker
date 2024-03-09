@@ -76,7 +76,7 @@ public class MasterSpark extends Entity implements IAnimatable {
         switch (this.tickCount) {
             case 40:
                 MagicRing ring = new MagicRing(EntitiesRegister.MAGIC_RING.get(), level);
-                ring.moveTo(this.position().add(new Vec3(0, 192f, 0)));
+                ring.moveTo(this.position().add(new Vec3(0, 256f, 0)));
                 level.addFreshEntity(ring);
                 ring.setFrom(this.from);
             case 100:

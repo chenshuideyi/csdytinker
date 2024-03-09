@@ -34,7 +34,6 @@ public class MagicRing extends Entity implements IAnimatable {
 
     @Override
     public void tick() {
-        super.tick();
         if (getLevel().isClientSide) clientTick();
         else serverTick();
     }
@@ -68,6 +67,10 @@ public class MagicRing extends Entity implements IAnimatable {
         return NetworkHooks.getEntitySpawningPacket(this);
     }
 
+    @Override
+    public boolean touchingUnloadedChunk() {
+        return false;
+    }
 
     //IAnimatable
 
