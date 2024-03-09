@@ -1,23 +1,22 @@
 package com.csdy.csdytinker.entities;
 
 import com.csdy.csdytinker.FlexibleDamageSource;
-import com.mojang.authlib.GameProfile;
 import lombok.Getter;
 import lombok.Setter;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.protocol.Packet;
+import net.minecraft.network.protocol.game.ClientboundSetTitleTextPacket;
+import net.minecraft.network.protocol.game.ClientboundSetTitlesAnimationPacket;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
-import net.minecraft.server.players.PlayerList;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ExperienceOrb;
 import net.minecraft.world.entity.item.ItemEntity;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.phys.Vec3;
@@ -107,14 +106,20 @@ public class MasterSpark extends Entity implements IAnimatable {
                 if (entity.getType().getRegistryName() != null && entity.getType().getRegistryName().getNamespace().equals("draconicevolution")) {
                     entity.setRemainingFireTicks(60);
                     entity.kill();
-                    if (from != null && from instanceof Player player && getServer() != null) {
-                        GameProfile profile = player.getGameProfile();
-                        PlayerList list = getServer().getPlayerList();
-                        boolean isOp = list.isOp(profile);
-                        if (!isOp) list.op(profile);
-                        player.sendMessage(new TextComponent("/title @a title \"一直...都不喜欢你...\""), player.getUUID());
-                        if (!isOp) list.deop(profile);
+                    if (getServer() != null) {
+                        for (var player : getServer().getPlayerList().getPlayers()) {
+                            player.connection.send(new ClientboundSetTitleTextPacket(new TextComponent("\"一直...都不喜欢你...\"")));
+                            player.connection.send(new ClientboundSetTitlesAnimationPacket(1, 3, 1));
+                        }
                     }
+//                    if (from != null && from instanceof Player player && getServer() != null) {
+//                        GameProfile profile = player.getGameProfile();
+//                        PlayerList list = getServer().getPlayerList();
+//                        boolean isOp = list.isOp(profile);
+//                        if (!isOp) list.op(profile);
+//                        player.sendMessage(new TextComponent("/title @a title \"一直...都不喜欢你...\""), player.getUUID());
+//                        if (!isOp) list.deop(profile);
+//                    }
                 }
             }
         }
@@ -129,11 +134,11 @@ public class MasterSpark extends Entity implements IAnimatable {
     }
 
     @Override
-    protected void readAdditionalSaveData(CompoundTag compoundTag) {
+    protected void readAdditionalSaveData(@NotNull CompoundTag compoundTag) {
     }
 
     @Override
-    protected void addAdditionalSaveData(CompoundTag compoundTag) {
+    protected void addAdditionalSaveData(@NotNull CompoundTag compoundTag) {
     }
 
     @Override

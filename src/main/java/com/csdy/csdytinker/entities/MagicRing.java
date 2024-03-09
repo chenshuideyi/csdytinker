@@ -51,12 +51,12 @@ public class MagicRing extends Entity implements IAnimatable {
     }
 
     @Override
-    protected void readAdditionalSaveData(CompoundTag compoundTag) {
+    protected void readAdditionalSaveData(@NotNull CompoundTag compoundTag) {
 
     }
 
     @Override
-    protected void addAdditionalSaveData(CompoundTag compoundTag) {
+    protected void addAdditionalSaveData(@NotNull CompoundTag compoundTag) {
 
     }
 
