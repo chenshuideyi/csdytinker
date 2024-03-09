@@ -10,6 +10,6 @@ public class MaterialsRegister {
         return new MaterialId(new ResourceLocation(CsdyTinker.MOD_ID, name));
     }
 
-    public final MaterialId INARONS = register("inarons");
-    public final MaterialId AGENT = register("agent");
+    public final MaterialId inarons = register("inarons");
+    public final MaterialId agent = register("agent");
 }

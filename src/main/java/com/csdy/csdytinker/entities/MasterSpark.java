@@ -3,6 +3,7 @@ package com.csdy.csdytinker.entities;
 import com.csdy.csdytinker.FlexibleDamageSource;
 import lombok.Getter;
 import lombok.Setter;
+import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -12,6 +13,10 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.AirBlock;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.network.NetworkHooks;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -44,7 +49,7 @@ public class MasterSpark extends Entity implements IAnimatable {
     @Setter
     private Entity from = null;
 
-    private List<Entity> hurtEntities = new ArrayList<>();
+    private final List<Entity> hurtEntities = new ArrayList<>();
 
     private static final EntityDataAccessor<Integer> STATE = SynchedEntityData.defineId(MasterSpark.class, EntityDataSerializers.INT);
 
@@ -72,14 +77,7 @@ public class MasterSpark extends Entity implements IAnimatable {
                     this.setPos(target.position());
                 break;
             case 1:
-                var entities = getLevel().getEntities(this, getBoundingBox());
-                for (var entity : entities) {
-                    if (!hurtEntities.contains(entity)) {
-                        hurtEntities.add(entity);
-                        DamageSource damageSource = new FlexibleDamageSource("master_spark", this.from).bypassArmor().bypassInvul().bypassMagic();
-                        entity.hurt(damageSource, ATK);
-                    }
-                }
+                shotTick();
                 break;
             case 2:
                 this.discard();
@@ -89,6 +87,19 @@ public class MasterSpark extends Entity implements IAnimatable {
 
     private void clientTick() {
 
+    }
+
+    private void shotTick() {
+        var entities = getLevel().getEntities(this, getBoundingBox());
+        for (var entity : entities) {
+            if (!hurtEntities.contains(entity)) {
+                hurtEntities.add(entity);
+                DamageSource damageSource = new FlexibleDamageSource("master_spark", this.from).bypassArmor().bypassInvul().bypassMagic();
+                entity.hurt(damageSource, ATK);
+            }
+        }
+        var blocks = BlockPos.betweenClosedStream(this.getBoundingBox());
+        blocks.forEach((block) -> level.setBlockAndUpdate(block, Blocks.AIR.defaultBlockState()));
     }
 
     //Entity

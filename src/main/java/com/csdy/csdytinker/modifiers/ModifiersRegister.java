@@ -20,8 +20,8 @@ public class ModifiersRegister {
     public static final StaticModifier<Forging> FORGING_STATIC_MODIFIER = MODIFIERS.register("forging", Forging::new);
     public static final StaticModifier<Quenching> QUENCHING_STATIC_MODIFIER = MODIFIERS.register("quenching", Quenching::new);
     public static final StaticModifier<Agent> AGENT_STATIC_MODIFIER = MODIFIERS.register("agent", Agent::new);
-    public static final StaticModifier<NoLevelsModifier> MK1_STATIC_MODIFIER = MODIFIERS.register("mk1", NoLevelsModifier::new);
-    public static final StaticModifier<NoLevelsModifier> TOO_EXPENSIVE_STATIC_MODIFIER = MODIFIERS.register("too_expensive", NoLevelsModifier::new);
+    public static final StaticModifier<NoLevelsModifier> AGENT_D1_STATIC_MODIFIER = MODIFIERS.register("agent.d1", NoLevelsModifier::new);
+    public static final StaticModifier<NoLevelsModifier> AGENT_D2_STATIC_MODIFIER = MODIFIERS.register("agent.d2", NoLevelsModifier::new);
     public static final StaticModifier<Kagutsuchi> KAGUTSUCHI_STATIC_MODIFIER = MODIFIERS.register("kagutsuchi", Kagutsuchi::new);
     public static final StaticModifier<ShatteredDreams> SHATTERED_DREAMS_STATIC_MODIFIER = MODIFIERS.register("shattered_dreams",ShatteredDreams::new);
 

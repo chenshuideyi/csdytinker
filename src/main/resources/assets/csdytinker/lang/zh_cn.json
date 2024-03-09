@@ -14,6 +14,14 @@
   "death.attack.fallen_star.suicide.item": "%1$s 通过 %3$s 近距离欣赏了一场流星雨",
 
   "item.csdytinker.inarons": "残沙",
+  "material.csdytinker.inarons": "测试残沙",
+  "material.csdytinker.inarons.flavor": "仅测试。",
+  "material.csdytinker.inarons.encyclopedia": "仅测试，无法使用",
+
+  "item.csdytinker.agent": "A.G.E.N.T",
+  "material.csdytinker.agent": "A.G.E.N.T",
+  "material.csdytinker.agent.flavor": "行走于世间的代行者",
+  "material.csdytinker.agent.encyclopedia": "以神之名赐你以死亡——",
 
   "modifier.csdytinker.trinity": "三位一体",
   "modifier.csdytinker.trinity.flavor": "三合一的戈伯达到了心意相通的境界",
@@ -53,17 +61,15 @@
   "modifier.csdytinker.agent": "“陨星”轨道打击系统",
   "modifier.csdytinker.agent.flavor": "天堂之矛已装载",
   "modifier.csdytinker.agent.description": "内置轨道定位系统，射出的箭矢受到冲击后会开始引导MK1-“陨星”轨道卫星降下精准的轨道热能打击",
-  "modifier.csdytinker.mk1": "MK-1",
-  "modifier.csdytinker.mk1.flavor": "警告：热能整流模块未实装",
-  "modifier.csdytinker.too_expensive": "过于昂贵",
-  "modifier.csdytinker.too_expensive.flavor": "每次打击耗费巨量资金",
-  "modifier.csdytinker.too_expensive.description": "总计：23662.22绿宝石",
+  "modifier.csdytinker.agent.d1": "MK-1",
+  "modifier.csdytinker.agent.d1.flavor": "原型机",
+  "modifier.csdytinker.agent.d1.description": "警告：热能整流模块未实装",
+  "modifier.csdytinker.agent.d2": "过于昂贵",
+  "modifier.csdytinker.agent.d2.flavor": "每次打击耗费巨量资金",
+  "modifier.csdytinker.agent.d2.description": "总计：23662.22绿宝石",
 
   "modifier.csdytinker.test1": "哥本哈根",
   "modifier.csdytinker.test1.flavor": "上帝也许会掷骰子",
-  "material.csdytinker.inarons": "测试残沙",
-  "material.csdytinker.inarons.flavor": "仅测试。",
-  "material.csdytinker.inarons.encyclopedia": "仅测试，无法使用",
 
   "material.kubejs.trinitygobber.flavor": "神灵般巅峰造极的完美戈伯",
   "material.kubejs.trinitygobber.encyclopedia": "三种力量合而为一，戈伯神力融合后的最完美形态。“我已达顶点，往后只有衰落”",

@@ -5,6 +5,7 @@ package com.csdy.csdytinker;
  import net.minecraftforge.common.MinecraftForge;
  import net.minecraftforge.common.data.ExistingFileHelper;
  import net.minecraftforge.eventbus.api.IEventBus;
+ import net.minecraftforge.eventbus.api.SubscribeEvent;
  import net.minecraftforge.fml.common.Mod;
  import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
  import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
@@ -34,6 +35,7 @@ public class CsdyTinker {
         MinecraftForge.EVENT_BUS.register(new ELivingEvent());
     }
 
+    @SubscribeEvent
     public static void gatherData(final GatherDataEvent event) {
         DataGenerator gen = event.getGenerator();
         ExistingFileHelper fileHelper = event.getExistingFileHelper();

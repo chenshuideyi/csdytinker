@@ -1,0 +1,24 @@
+{
+  "perStat": {
+    "tconstruct:ranged": [
+      {
+        "name": "csdytinker:agent",
+        "level": 1
+      },
+      {
+        "name": "csdytinker:agent.d1",
+        "level": 1
+      },
+      {
+        "name": "csdytinker:agent.d2",
+        "level": 1
+      }
+    ],
+    "tconstruct:melee_harvest": [
+      {
+        "name": "tconstruct:smite",
+        "level": 1
+      }
+    ]
+  }
+}
