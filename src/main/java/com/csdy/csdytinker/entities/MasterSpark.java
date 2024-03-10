@@ -125,8 +125,8 @@ public class MasterSpark extends Entity implements IAnimatable {
 
                 //} else {
                     entity.setRemainingFireTicks(60);
-                    DamageSource damageSource = new FlexibleDamageSource("master_spark", this.from).bypassEverything();//bypassArmor().bypassMagic();
-                    entity.hurt(damageSource, ATK);
+                    FlexibleDamageSource damageSource = new FlexibleDamageSource("master_spark", this.from).bypassEverything();//bypassArmor().bypassMagic();
+                    damageSource.damage(entity,ATK);
                 //}
             }
         }

@@ -72,7 +72,7 @@ public class FinalTypeHurtEventHandler {
         event.setCanceled(cancel);
     }
 
-    private static boolean OnEvent(DamageSource eventSource, LivingEntity entity, float amount) {
+    public static boolean OnEvent(DamageSource eventSource, LivingEntity entity, float amount) {
         boolean cancel = false;
         if (eventSource instanceof FlexibleDamageSource source && source.isBypassEverything()) {
             cancel = true;

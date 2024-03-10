@@ -15,6 +15,7 @@ import org.jetbrains.annotations.Nullable;
 
 //自定义死亡文本，默认death.attack.{你设置的伤害类型}，无来源后缀.sourceless，自杀后缀.suicide，凶器有自定义名字时额外后缀.item
 //写文本时%1$s-死者，%2$s-伤害来源，%3$s凶器名字
+//攻击时候用这个
 public class FlexibleDamageSource extends DamageSource {
 
     @Getter
@@ -32,6 +33,16 @@ public class FlexibleDamageSource extends DamageSource {
     public FlexibleDamageSource(String msgId, @Nullable Entity source) {
         super(msgId);
         entity = source;
+    }
+
+    public boolean damage(Entity target, float amount) {
+        boolean canceled, result;
+        if (target instanceof LivingEntity living) {
+            canceled = FinalTypeHurtEventHandler.OnEvent(this, living, amount);
+        } else canceled = false;
+        if (!canceled) result = target.hurt(this, amount);
+        else result = false;
+        return result;
     }
 
     private final @Nullable Entity entity;
