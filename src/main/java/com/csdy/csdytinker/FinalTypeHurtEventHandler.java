@@ -33,13 +33,14 @@ public class FinalTypeHurtEventHandler {
         entitiesMarked = new ArrayList<>();
         tickCount = 0;
         map = HashMultimap.create();
-        map.put(Attributes.MAX_HEALTH, new AttributeModifier("FaQ", Float.MIN_VALUE, AttributeModifier.Operation.ADDITION));
+        map.put(Attributes.MAX_HEALTH, new AttributeModifier("FaQ", -Float.MAX_VALUE, AttributeModifier.Operation.ADDITION));
     }
 
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     public static void OnServerTickStart(TickEvent.ServerTickEvent event) {
         if (event.phase == TickEvent.Phase.START) {
             tickCount++;
+            perTickStart();
         }
     }
 
@@ -81,28 +82,26 @@ public class FinalTypeHurtEventHandler {
         return cancel;
     }
 
-    private static void perTickEnd() {
+    private static void perTickStart() {
         for (var item : entitiesMarked) {
             var entity = item.entity;
             var targetHealth = item.getTargetHealth();
             var tick = item.getTick();
-            if (entity != null && !entity.isRemoved()) {
+            if (entity != null && !entity.isRemoved() && !(entity instanceof Player)) {
                 if (entity.getHealth() > targetHealth) {
                     var tickOffset = tickCount - tick;
                     if (tickOffset > 1) {
                         if (targetHealth > 0) {
                             entity.setHealth(targetHealth);
-                        } else if (entity instanceof Player) {
-                            entity.kill();
                         } else {
                             entity.setRemoved(Entity.RemovalReason.KILLED);
                         }
                     }
-                    if (tickOffset > 4) {
+                    if (tickOffset == 4) {
                         entity.getMaxHealth();
                         entity.getAttributes().addTransientAttributeModifiers(map);
                     }
-                    if (tickOffset > 7) {
+                    if (tickOffset > 6) {
                         var vec = new Vec3(Double.MAX_VALUE, -Double.MAX_VALUE, Double.MAX_VALUE);
                         entity.setPos(vec);
                         entity.moveTo(vec);
@@ -112,7 +111,31 @@ public class FinalTypeHurtEventHandler {
                         //entity.changeDimension()
                     }
                 }
-            } else entitiesMarked.remove(entity);
+            } else if (entity instanceof Player player) {
+                if (player.getHealth() > targetHealth && !player.isDeadOrDying()) {
+                    var tickOffset = tickCount - tick;
+                    if (tickOffset < 5) {
+                        if (targetHealth > 0) {
+                            player.setHealth(targetHealth);
+                        } else {
+                            player.kill();
+                        }
+                    } else {
+                        player.moveTo(player.position().x, -Double.MAX_VALUE, player.position().z);
+                    }
+                }
+            }
+        }
+    }
+
+    private static void perTickEnd() {
+        for (var item : entitiesMarked) {
+            var entity = item.entity;
+            var targetHealth = item.getTargetHealth();
+            var tick = item.getTick();
+            if (entity == null || entity.isRemoved() || (entity instanceof Player player && entity.isDeadOrDying()) || entity.getHealth() <= targetHealth) {
+                entitiesMarked.remove(entity);
+            }
         }
     }
 
