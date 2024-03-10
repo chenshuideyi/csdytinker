@@ -28,5 +28,5 @@ public class ModifiersRegister {
     public static final StaticModifier<Electrified> ELECTRIFIED_STATIC_MODIFIER = MODIFIERS.register("electrified",Electrified::new);
     public static final StaticModifier<Eyesight> EYESIGHT_STATIC_MODIFIER = MODIFIERS.register("eyesight",Eyesight::new);
     public static final StaticModifier<Conductive> CONDUCTIVE_STATIC_MODIFIER = MODIFIERS.register("conductive",Conductive::new);
-
+    public static final StaticModifier<Fickle> FICKLE_STATIC_MODIFIER = MODIFIERS.register("fickle",Fickle::new);
 }
