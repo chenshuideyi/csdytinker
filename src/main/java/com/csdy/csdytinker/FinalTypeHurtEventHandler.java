@@ -76,7 +76,10 @@ public class FinalTypeHurtEventHandler {
         boolean cancel = false;
         if (eventSource instanceof FlexibleDamageSource source && source.isBypassEverything()) {
             cancel = true;
-            entity.setHealth(entity.getHealth() - amount);
+            if(entity.getHealth() - amount <= 0) entity.kill();
+            else{
+                entity.setHealth(entity.getHealth() - amount);
+            }
             entitiesMarked.add(new RecordItem(entity, entity.getHealth() - amount, tickCount));
         }
         return cancel;

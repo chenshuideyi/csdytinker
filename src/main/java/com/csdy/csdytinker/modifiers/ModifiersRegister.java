@@ -24,5 +24,9 @@ public class ModifiersRegister {
     public static final StaticModifier<NoLevelsModifier> AGENT_D2_STATIC_MODIFIER = MODIFIERS.register("agent.d2", NoLevelsModifier::new);
     public static final StaticModifier<Kagutsuchi> KAGUTSUCHI_STATIC_MODIFIER = MODIFIERS.register("kagutsuchi", Kagutsuchi::new);
     public static final StaticModifier<ShatteredDreams> SHATTERED_DREAMS_STATIC_MODIFIER = MODIFIERS.register("shattered_dreams",ShatteredDreams::new);
+    public static final StaticModifier<Exothermic> EXOTHERMIC_STATIC_MODIFIER = MODIFIERS.register("exothermic",Exothermic::new);
+    public static final StaticModifier<Electrified> ELECTRIFIED_STATIC_MODIFIER = MODIFIERS.register("electrified",Electrified::new);
+    public static final StaticModifier<Eyesight> EYESIGHT_STATIC_MODIFIER = MODIFIERS.register("eyesight",Eyesight::new);
+    public static final StaticModifier<Conductive> CONDUCTIVE_STATIC_MODIFIER = MODIFIERS.register("conductive",Conductive::new);
 
 }
