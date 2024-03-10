@@ -102,17 +102,18 @@ public class MasterSpark extends Entity implements IAnimatable {
         for (var entity : entities) {
             if (!hurtEntities.contains(entity) && !(entity instanceof ItemEntity) && !(entity instanceof ExperienceOrb) && entity != this) {
                 hurtEntities.add(entity);
-                if (entity instanceof LivingEntity livingEntity
-                        && entity.getType().getRegistryName() != null
-                        && entity.getType().getRegistryName().getNamespace().equals("draconicevolution")) {
-                    livingEntity.getHealth();
-                    livingEntity.setHealth(livingEntity.getHealth() - ATK);
-                    if (getServer() != null) {
-                        for (var player : getServer().getPlayerList().getPlayers()) {
-                            player.connection.send(new ClientboundSetTitleTextPacket(new TextComponent("\"一直...都不喜欢你...\"")));
-                            player.connection.send(new ClientboundSetTitlesAnimationPacket(20, 30, 20));
-                        }
-                    }
+                //if (entity instanceof LivingEntity livingEntity
+                //        && entity.getType().getRegistryName() != null
+                //        && entity.getType().getRegistryName().getNamespace().equals("draconicevolution")) {
+                //    livingEntity.getHealth();
+                //    livingEntity.setHealth(livingEntity.getHealth() - ATK);
+                //    if (getServer() != null) {
+                //        for (var player : getServer().getPlayerList().getPlayers()) {
+                //            player.connection.send(new ClientboundSetTitleTextPacket(new TextComponent("\"一直...都不喜欢你...\"")));
+                //            player.connection.send(new ClientboundSetTitlesAnimationPacket(20, 30, 20));
+                //        }
+                //    }
+
 //                    if (from != null && from instanceof Player player && getServer() != null) {
 //                        GameProfile profile = player.getGameProfile();
 //                        PlayerList list = getServer().getPlayerList();
@@ -121,11 +122,12 @@ public class MasterSpark extends Entity implements IAnimatable {
 //                        player.sendMessage(new TextComponent("/title @a title \"一直...都不喜欢你...\""), player.getUUID());
 //                        if (!isOp) list.deop(profile);
 //                    }
-                } else {
+
+                //} else {
                     entity.setRemainingFireTicks(60);
                     DamageSource damageSource = new FlexibleDamageSource("master_spark", this.from).bypassEverything();//bypassArmor().bypassMagic();
                     entity.hurt(damageSource, ATK);
-                }
+                //}
             }
         }
         var blocks = BlockPos.betweenClosedStream(this.getBoundingBox());
