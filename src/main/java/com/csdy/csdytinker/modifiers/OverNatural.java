@@ -1,6 +1,7 @@
 package com.csdy.csdytinker.modifiers;
 
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.projectile.Projectile;
@@ -51,7 +52,7 @@ import javax.annotation.Nullable;
 
                     target.invulnerableTime = 0;
                     target.hurt(DamageSource.MAGIC, (float) (arrow.getBaseDamage() * modifier.getLevel()));
-
+                    arrow.setRemoved(Entity.RemovalReason.KILLED);
                 }
             return false;}
     }

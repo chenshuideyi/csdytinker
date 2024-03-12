@@ -1,31 +1,7 @@
 {
   "default": [
     {
-      "name": "csdytinker:fickle",
-      "level": 1
-    },
-    {
-      "name": "csdytinker:erase",
-      "level": 1
-    },
-    {
-      "name": "csdytinker:forging",
-      "level": 1
-    },
-    {
-      "name": "csdytinker:overnatural",
-      "level": 1
-    },
-    {
-      "name": "csdytinker:triplingbless",
-      "level": 1
-    },
-    {
-      "name": "csdytinker:makeconcertedefforts",
-      "level": 1
-    },
-    {
-      "name": "csdytinker:quenching",
+      "name": "csdytinker:arthur",
       "level": 1
     }
   ]

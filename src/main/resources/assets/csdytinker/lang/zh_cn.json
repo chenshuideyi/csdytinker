@@ -27,8 +27,8 @@
   "modifier.csdytinker.trinity.flavor": "三合一的戈伯达到了心意相通的境界",
   "modifier.csdytinker.trinity.description": "每级给予你的工具40%全属性修正",
   "modifier.csdytinker.makeconcertedefforts": "同心协力",
-  "modifier.csdytinker.makeconcertedefforts.flavor": "三种戈伯联合起来为你的武器诞下了诅咒之力",
-  "modifier.csdytinker.makeconcertedefforts.description": "使你的工具所有槽位都响应戈伯高傲力量的召唤",
+  "modifier.csdytinker.makeconcertedefforts.flavor": "三种戈伯联合起来为你的武器诞下了诅咒",
+  "modifier.csdytinker.makeconcertedefforts.description": "使你的工具所有槽位都囹圄于戈伯的高傲力量",
   "modifier.csdytinker.triplingbless": "三重祝福",
   "modifier.csdytinker.triplingbless.flavor": "屈服于你力量的戈伯颤抖着为你的工具咏颂祝福",
   "modifier.csdytinker.triplingbless.description": "每级提升30%各项属性，若等级大于三，则每级提升60%各项属性",
@@ -37,8 +37,8 @@
   "modifier.csdytinker.triplingcurse.description": "每级增加全槽位，每个升级槽都会额外提供13%的全属性加成",
 
   "modifier.csdytinker.erase": "抹消",
-  "modifier.csdytinker.erase.flavor": "伴随轻描淡写地划过，眸中的存在于记忆中消逝了",
-  "modifier.csdytinker.erase.description": "造成伤害时，额外附加对方目前生命值10%的虚空伤害",
+  "modifier.csdytinker.erase.flavor": "没有任何受伤的痕迹，但逝去的呼吸正告示着大伟力",
+  "modifier.csdytinker.erase.description": "造成伤害时，额外附加对方目前生命值15%的虚空伤害",
   "modifier.csdytinker.overnatural": "超自然",
   "modifier.csdytinker.overnatural.flavor": "魔法的力量",
   "modifier.csdytinker.overnatural.description": "攻击时额外造成魔法伤害",
@@ -71,12 +71,53 @@
   "modifier.csdytinker.test1": "哥本哈根",
   "modifier.csdytinker.test1.flavor": "上帝也许会掷骰子",
 
-  "material.kubejs.trinitygobber.flavor": "神灵般巅峰造极的完美戈伯",
-  "material.kubejs.trinitygobber.encyclopedia": "三种力量合而为一，戈伯神力融合后的最完美形态。“我已达顶点，往后只有衰落”",
-  "material.kubejs.failed_gobbers.flavor": "被折翼亵渎的残次戈伯",
-  "material.kubejs.failed_gobbers.encyclopedia": "杂糅的残次品，充斥着不纯之物的劣等货。拥有对三位一体神力十不存一的拙劣模仿",
+  "material.kubejs.trinitygobber.flavor": "狂暴且完美的力量,抗拒与刚愎的灵魂“我已达顶点,往后只有衰落”",
+  "material.kubejs.trinitygobber.description": "狂暴且完美的力量,抗拒与刚愎的灵魂“我已达顶点,往后只有衰落”",
+
+  "material.kubejs.failed_gobbers.flavor": "被解离的力量,被摧毁的心智“如今,饱经风霜的戈伯只剩下空洞的自尊”",
+  "material.kubejs.failed_gobbers.description": "被解离的力量,被摧毁的心智“如今,饱经风霜的戈伯只剩下空洞的自尊”",
 
   "modifier.csdytinker.kagutsuchi": "炎遁·加具土命",
   "modifier.csdytinker.kagutsuchi.flavor": "この術は絶対にかわすことが出来ない!",
-  "modifier.csdytinker.kagutsuchi.description": "按下shift+右键为你的武器附上在目标被燃尽前不会消失的黑炎"
+  "modifier.csdytinker.kagutsuchi.description": "按下shift+右键为你的武器附上在目标被燃尽前不会消失的黑炎",
+
+  "modifier.csdytinker.agile": "灵活",
+  "modifier.csdytinker.agile.flavor": "灵活就业者",
+  "modifier.csdytinker.agile.description": "在寒冷群系增加25%的箭矢伤害，在炎热群系增加25%的精准度。",
+  "modifier.csdytinker.electrified": "导电",
+  "modifier.csdytinker.electrified.flavor": "怎么有一股焦味?。",
+  "modifier.csdytinker.electrified.description": "攻击时将敌人麻痹2秒。",
+  "modifier.csdytinker.conductive": "感电",
+  "modifier.csdytinker.conductive.flavor": "小心有雷。",
+  "modifier.csdytinker.conductive.description": "雷雨天时攻击30%引雷。",
+  "modifier.csdytinker.exothermic": "热传导",
+  "modifier.csdytinker.exothermic.flavor": "别和导热搞混了。",
+  "modifier.csdytinker.exothermic.description": "在炎热群系攻击提供火焰附加",
+  "modifier.csdytinker.fickle": "善变",
+  "modifier.csdytinker.fickle.flavor": "善变，是我的本性",
+  "modifier.csdytinker.fickle.description": "在寒冷群系每次攻击获得抗性提升，在炎热群系增加25%的近战伤害。",
+  "modifier.csdytinker.eyesight": "明目",
+  "modifier.csdytinker.eyesight.flavor": "究极版β-胡萝卜素！",
+  "modifier.csdytinker.eyesight.description": "食用获得夜视。",
+  "modifier.csdytinker.lightgel": "荧光胶冻",
+  "modifier.csdytinker.lightgel.flavor": "可食用的神奇黏糊糊覆层。",
+  "modifier.csdytinker.lightgel.description": "食用黏液覆层获得夜视。",
+
+  "modifier.csdytinker.null1": "调律",
+  "modifier.csdytinker.null1.flavor": "世界的调律者，已然苏醒",
+  "modifier.csdytinker.null1.description": "",
+
+  "modifier.csdytinker.arthur": "屠龙者的技艺",
+  "modifier.csdytinker.arthur.flavor": "一直...都不喜欢你",
+  "modifier.csdytinker.arthur.description": "将你基础伤害的50%转换为可以撕破混沌守卫一切防御的力量.远程武器会获得600点",
+
+  "modifier.csdytinker.banishment": "放逐",
+  "modifier.csdytinker.banishment.flavor": "伴随轻描淡写地划过，眸中的存在于记忆中消逝了",
+  "modifier.csdytinker.banishment.description": "使击中的目标被放逐于所有时间与空间之外",
+
+  "modifier.csdytinker.shattered_dreams": "碎梦",
+  "modifier.csdytinker.shattered_dreams.flavor": "笨拙打着拍子的陌生人都不见",
+  "modifier.csdytinker.shattered_dreams.description": "使你的武器在击中目标时具有一个非常cooooooooool的音效"
+
+
 }

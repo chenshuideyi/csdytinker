@@ -1,5 +1,6 @@
 package com.csdy.csdytinker.modifiers;
 
+import org.lwjgl.system.CallbackI;
 import slimeknights.tconstruct.library.modifiers.impl.NoLevelsModifier;
 import slimeknights.tconstruct.library.modifiers.util.ModifierDeferredRegister;
 import slimeknights.tconstruct.library.modifiers.util.StaticModifier;
@@ -29,4 +30,7 @@ public class ModifiersRegister {
     public static final StaticModifier<Eyesight> EYESIGHT_STATIC_MODIFIER = MODIFIERS.register("eyesight",Eyesight::new);
     public static final StaticModifier<Conductive> CONDUCTIVE_STATIC_MODIFIER = MODIFIERS.register("conductive",Conductive::new);
     public static final StaticModifier<Fickle> FICKLE_STATIC_MODIFIER = MODIFIERS.register("fickle",Fickle::new);
+    public static final StaticModifier<Test> TEST_STATIC_MODIFIER = MODIFIERS.register("test",Test::new);
+    public static final StaticModifier<Banishment> BANISHMENT_STATIC_MODIFIER = MODIFIERS.register("banishment",Banishment::new);
+    public static final StaticModifier<Arthur> ARTHUR_STATIC_MODIFIER = MODIFIERS.register("arthur",Arthur::new);
 }

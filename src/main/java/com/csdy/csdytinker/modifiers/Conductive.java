@@ -2,6 +2,7 @@ package com.csdy.csdytinker.modifiers;
 
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LightningBolt;
 import net.minecraft.world.entity.LivingEntity;
@@ -55,6 +56,7 @@ public class Conductive extends NoLevelsModifier implements ProjectileHitModifie
                 world.addFreshEntity(lightningBolt);
             }
             arrow.setBaseDamage(arrow.getBaseDamage());
+            arrow.setRemoved(Entity.RemovalReason.KILLED);
         }
         return false;
     }
