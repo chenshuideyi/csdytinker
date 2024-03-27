@@ -32,6 +32,7 @@ public class Erase extends NoLevelsModifier implements ProjectileHitModifierHook
     public float getEntityDamage(@Nonnull IToolStackView tool, int level, @Nonnull ToolAttackContext context, float baseDamage, float damage) {
         LivingEntity target = context.getLivingTarget();
         if (target != null) {
+            target.invulnerableTime = 0;
             target.hurt(DamageSource.OUT_OF_WORLD, 0.15f * target.getHealth()) ;
         }
         return damage;
@@ -43,7 +44,7 @@ public class Erase extends NoLevelsModifier implements ProjectileHitModifierHook
     @Override
     public boolean onProjectileHitEntity(ModifierNBT modifiers, NamespacedNBT persistentData, ModifierEntry modifier, Projectile projectile, EntityHitResult hit, @Nullable LivingEntity attacker, @Nullable LivingEntity target) {
         if (projectile instanceof AbstractArrow arrow && target != null) {
-
+                target.invulnerableTime = 0;
                 target.hurt(DamageSource.OUT_OF_WORLD, 0.15f * target.getHealth()) ;
                 arrow.setBaseDamage(arrow.getBaseDamage());
                 arrow.setRemoved(Entity.RemovalReason.KILLED);

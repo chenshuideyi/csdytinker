@@ -32,7 +32,7 @@ public class Conductive extends NoLevelsModifier implements ProjectileHitModifie
             if (world.isThundering()) {
                 if (world.getRandom().nextInt(100) >= 30) {
                     LightningBolt lightningBolt = new LightningBolt(EntityType.LIGHTNING_BOLT, world);
-                    lightningBolt.moveTo(target.getX(), target.getY(), target.getZ());
+                    lightningBolt.moveTo(target.position());
                     world.addFreshEntity(lightningBolt);
                 }
             }
@@ -52,7 +52,8 @@ public class Conductive extends NoLevelsModifier implements ProjectileHitModifie
             Level world = target.getLevel();
             if (world.getRandom().nextInt(100) >= 30) {
                 LightningBolt lightningBolt = new LightningBolt(EntityType.LIGHTNING_BOLT, world);
-                lightningBolt.moveTo(target.getX(), target.getY(), target.getZ());
+                lightningBolt.moveTo(target.position());
+                // (target.getX(), target.getY(), target.getZ());
                 world.addFreshEntity(lightningBolt);
             }
             arrow.setBaseDamage(arrow.getBaseDamage());

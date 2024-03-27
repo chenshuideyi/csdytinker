@@ -11,7 +11,7 @@
       "durability": 940,
       "miningSpeed": 5,
       "harvestTier": "minecraft:diamond",
-      "attack": 3.3
+      "attack": 0.3
     },
     "tconstruct:limb": {
       "durability": 940,

@@ -1,8 +1,5 @@
 package com.csdy.csdytinker.modifiers;
 
-import net.minecraft.network.chat.TextComponent;
-import net.minecraft.network.protocol.game.ClientboundSetTitleTextPacket;
-import net.minecraft.network.protocol.game.ClientboundSetTitlesAnimationPacket;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
@@ -19,29 +16,29 @@ import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.nbt.ModifierNBT;
 import slimeknights.tconstruct.library.tools.nbt.NamespacedNBT;
 
-
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+import java.util.Random;
 
+public class Death extends NoLevelsModifier implements ProjectileHitModifierHook {
+    Random random = new Random();
 
-
-import static com.google.common.primitives.Floats.max;
-
-public class Arthur extends NoLevelsModifier implements ProjectileHitModifierHook {
 
     @Override
     public float getEntityDamage(@Nonnull IToolStackView tool, int level, @Nonnull ToolAttackContext context, float baseDamage, float damage) {
         LivingEntity target = context.getLivingTarget();
         if (target != null) {
-            if (target.getType().getRegistryName().getNamespace().equals("draconicevolution")) {
-                target.setRemoved(Entity.RemovalReason.KILLED);
+            if (target.getHealth() == target.getHealth()) {
+                int randomNumber = random.nextInt(4); // 生成0到3的随机数
+                if (randomNumber == 0) {
+                    target.invulnerableTime = 0;
+                    target.hurt(DamageSource.OUT_OF_WORLD,target.getMaxHealth()*0.75f);
+                }
+
             }
-            target.setHealth(max(target.getHealth() - 0.5f * damage, 1));
-            if (target.getHealth() - 0.5f * damage <= 0) {
-                return damage * 100000;
-            }
+
         }
-        return 0.5f * damage;
+        return damage;
     }
 
     @Override
@@ -52,22 +49,17 @@ public class Arthur extends NoLevelsModifier implements ProjectileHitModifierHoo
     @Override
     public boolean onProjectileHitEntity(ModifierNBT modifiers, NamespacedNBT persistentData, ModifierEntry modifier, Projectile projectile, EntityHitResult hit, @Nullable LivingEntity attacker, @Nullable LivingEntity target) {
         if (projectile instanceof AbstractArrow arrow && target != null) {
-            arrow.setBaseDamage(arrow.getBaseDamage());
-            target.setHealth(max((float) (target.getHealth() - 300f * arrow.getBaseDamage()), 1));
-            if (target.getHealth() - 300f * arrow.getBaseDamage() <= 0) {
-                if (target.getType().getRegistryName().getNamespace().equals("draconicevolution")) {
-                    for (var player : attacker.getServer().getPlayerList().getPlayers()) {
-                        player.connection.send(new ClientboundSetTitleTextPacket(new TextComponent("\"一直...都不喜欢你...\"")));
-                        player.connection.send(new ClientboundSetTitlesAnimationPacket(20, 30, 20));
+            if (target.getHealth() == target.getHealth()) {
+                int randomNumber = random.nextInt(4); // 生成0到3的随机数
+                if (randomNumber == 0) {
+                    target.invulnerableTime = 0;
+                    target.hurt(DamageSource.OUT_OF_WORLD,target.getMaxHealth()*0.75f);
 
-                    }
-                    target.setHealth(0);
-                    //.hurt(DamageSource.OUT_OF_WORLD, 100000000) ;
                 }
-
+                arrow.setBaseDamage(arrow.getBaseDamage());
+                arrow.setRemoved(Entity.RemovalReason.KILLED);
             }
-            arrow.setBaseDamage(arrow.getBaseDamage()*0.8f);
-            arrow.setRemoved(Entity.RemovalReason.KILLED);
+
         }
         return false;
     }

@@ -1,6 +1,6 @@
 package com.csdy.csdytinker;
  import com.csdy.csdytinker.entities.EntitiesRegister;
- import com.csdy.csdytinker.modifiers.ModifiersRegister;
+ import com.csdy.csdytinker.modifiers.Register.ModifiersRegister;
  import net.minecraft.data.DataGenerator;
  import net.minecraftforge.common.MinecraftForge;
  import net.minecraftforge.common.data.ExistingFileHelper;

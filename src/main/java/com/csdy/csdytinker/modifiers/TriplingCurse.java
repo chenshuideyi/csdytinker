@@ -27,23 +27,20 @@ public class TriplingCurse extends Modifier {
     @Override
     public void addToolStats(ToolRebuildContext context, int level, ModifierStatsBuilder builder) {
 
-        IModDataView up = context.getVolatileData();
          int number = context.getVolatileData().getSlots(SlotType.UPGRADE)
                  +context.getVolatileData().getSlots(SlotType.ABILITY)
                  +context.getVolatileData().getSlots(SlotType.DEFENSE);
 
-
-
         ToolStats.DRAW_SPEED.multiply(builder, 1 + 0.13  * number);
-            ToolStats.MINING_SPEED.multiply(builder, 1 + 0.13  * number);
-            ToolStats.DURABILITY.multiply(builder, 1 + 0.13  * number);
-            ToolStats.ATTACK_SPEED.multiply(builder, 1 + 0.13  * number);
-            ToolStats.ATTACK_DAMAGE.multiply(builder, 1 + 0.13 * number);
-            ToolStats.VELOCITY.multiply(builder, 1 + 0.13  * number);
-            ToolStats.ACCURACY.multiply(builder, 1 + 0.13  * number);
-            ToolStats.PROJECTILE_DAMAGE.multiply(builder, 1 + 0.13  * number);
-            ToolStats.ARMOR.multiply(builder, 1 + 0.13 * number);
-            ToolStats.ARMOR_TOUGHNESS.multiply(builder, 1 + 0.13 * number);
+        ToolStats.MINING_SPEED.multiply(builder, 1 + 0.13  * number);
+        //ToolStats.DURABILITY.multiply(builder, 1 + 0.13  * (number * 0.5f));
+        ToolStats.ATTACK_SPEED.multiply(builder, 1 + 0.13  * number);
+        ToolStats.ATTACK_DAMAGE.multiply(builder, 1 + 0.13 * number);
+        ToolStats.VELOCITY.multiply(builder, 1 + 0.13  * number);
+        ToolStats.ACCURACY.multiply(builder, 1 + 0.13  * number);
+        ToolStats.PROJECTILE_DAMAGE.multiply(builder, 1 + 0.13  * number);
+        ToolStats.ARMOR.multiply(builder, 1 + 0.13 * number);
+        ToolStats.ARMOR_TOUGHNESS.multiply(builder, 1 + 0.13 * number);
         }
     }
 

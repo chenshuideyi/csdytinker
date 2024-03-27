@@ -49,12 +49,12 @@ import javax.annotation.Nullable;
 
             if (projectile instanceof AbstractArrow arrow)
                 if (target != null) {
-
                     target.invulnerableTime = 0;
                     target.hurt(DamageSource.MAGIC, (float) (arrow.getBaseDamage() * modifier.getLevel()));
                     arrow.setRemoved(Entity.RemovalReason.KILLED);
                 }
-            return false;}
+            return false;
+        }
     }
 
 

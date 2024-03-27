@@ -13,10 +13,10 @@
   "death.attack.fallen_star.suicide": "%1$s 近距离欣赏了一场流星雨",
   "death.attack.fallen_star.suicide.item": "%1$s 通过 %3$s 近距离欣赏了一场流星雨",
 
-  "item.csdytinker.inarons": "残沙",
-  "material.csdytinker.inarons": "测试残沙",
+  "item.csdytinker.inarons": "inarons",
+  "material.csdytinker.inarons": "inarons",
   "material.csdytinker.inarons.flavor": "仅测试。",
-  "material.csdytinker.inarons.encyclopedia": "仅测试，无法使用",
+  "material.csdytinker.inarons.encyclopedia": "仅测试使用",
 
   "item.csdytinker.agent": "A.G.E.N.T",
   "material.csdytinker.agent": "A.G.E.N.T",
@@ -26,34 +26,43 @@
   "modifier.csdytinker.trinity": "三位一体",
   "modifier.csdytinker.trinity.flavor": "三合一的戈伯达到了心意相通的境界",
   "modifier.csdytinker.trinity.description": "每级给予你的工具40%全属性修正",
+
   "modifier.csdytinker.makeconcertedefforts": "同心协力",
   "modifier.csdytinker.makeconcertedefforts.flavor": "三种戈伯联合起来为你的武器诞下了诅咒",
   "modifier.csdytinker.makeconcertedefforts.description": "使你的工具所有槽位都囹圄于戈伯的高傲力量",
+
   "modifier.csdytinker.triplingbless": "三重祝福",
   "modifier.csdytinker.triplingbless.flavor": "屈服于你力量的戈伯颤抖着为你的工具咏颂祝福",
-  "modifier.csdytinker.triplingbless.description": "每级提升30%各项属性，若等级大于三，则每级提升60%各项属性",
+  "modifier.csdytinker.triplingbless.description": "每级提升30%除耐久外各项属性，若等级大于三，则改为每级提升60%",
+
   "modifier.csdytinker.triplingcurse": "三重咒诅",
   "modifier.csdytinker.triplingcurse.flavor": "被击溃的戈伯再也无力反抗，曾经深沉的诅咒如今为你所用",
-  "modifier.csdytinker.triplingcurse.description": "每级增加全槽位，每个升级槽都会额外提供13%的全属性加成",
+  "modifier.csdytinker.triplingcurse.description": "每级增加全槽位一个，每个槽位都会额外提供13%的除耐久外属性加成",
 
   "modifier.csdytinker.erase": "抹消",
   "modifier.csdytinker.erase.flavor": "没有任何受伤的痕迹，但逝去的呼吸正告示着大伟力",
   "modifier.csdytinker.erase.description": "造成伤害时，额外附加对方目前生命值15%的虚空伤害",
+
   "modifier.csdytinker.overnatural": "超自然",
   "modifier.csdytinker.overnatural.flavor": "魔法的力量",
   "modifier.csdytinker.overnatural.description": "攻击时额外造成魔法伤害",
+
   "modifier.csdytinker.void": "超魔法",
   "modifier.csdytinker.void.flavor": "虚空的力量",
   "modifier.csdytinker.void.description": "攻击时额外造成虚空伤害",
+
   "modifier.csdytinker.overvoid": "超虚空",
   "modifier.csdytinker.overvoid.flavor": "物理的力量",
   "modifier.csdytinker.overvoid.description": "攻击时额外造成物理伤害",
+
   "modifier.csdytinker.gamble": "赌博",
   "modifier.csdytinker.gamble.flavor": "二分之一的概率，成王或是败寇",
   "modifier.csdytinker.gamble.description": "攻击时有50%的概率造成200%的伤害，50%的概率造成50%的伤害",
+
   "modifier.csdytinker.quenching": "火淬",
   "modifier.csdytinker.quenching.flavor": "千磨万击还坚劲",
   "modifier.csdytinker.quenching.description": "每级额外造成6点伤害",
+
   "modifier.csdytinker.forging": "锻材",
   "modifier.csdytinker.forging.flavor": "任尔东西南北风",
   "modifier.csdytinker.forging.description": "每级提升10%工具全属性",
@@ -61,9 +70,11 @@
   "modifier.csdytinker.agent": "\"陨星\"轨道打击系统",
   "modifier.csdytinker.agent.flavor": "天堂之矛已装载",
   "modifier.csdytinker.agent.description": "内置轨道定位系统，射出的箭矢受到冲击后会开始引导MK1-“陨星”轨道卫星降下精准的轨道热能打击",
+
   "modifier.csdytinker.agent.d1": "MK-1",
   "modifier.csdytinker.agent.d1.flavor": "原型机",
   "modifier.csdytinker.agent.d1.description": "警告：热能整流模块未实装",
+
   "modifier.csdytinker.agent.d2": "过于昂贵",
   "modifier.csdytinker.agent.d2.flavor": "每次打击耗费巨量资金",
   "modifier.csdytinker.agent.d2.description": "总计：23662.22绿宝石",
@@ -71,45 +82,51 @@
   "modifier.csdytinker.test1": "哥本哈根",
   "modifier.csdytinker.test1.flavor": "上帝也许会掷骰子",
 
-  "material.kubejs.trinitygobber.flavor": "狂暴且完美的力量,抗拒与刚愎的灵魂“我已达顶点,往后只有衰落”",
-  "material.kubejs.trinitygobber.description": "狂暴且完美的力量,抗拒与刚愎的灵魂“我已达顶点,往后只有衰落”",
+  "material.kubejs.trinitygobber.flavor": "三种力量加身",
+  "material.kubejs.trinitygobber.encyclopedia": "“我已达顶点,往后只有衰落”",
 
-  "material.kubejs.failed_gobbers.flavor": "被解离的力量,被摧毁的心智“如今,饱经风霜的戈伯只剩下空洞的自尊”",
-  "material.kubejs.failed_gobbers.description": "被解离的力量,被摧毁的心智“如今,饱经风霜的戈伯只剩下空洞的自尊”",
+  "material.kubejs.failed_gobbers.flavor": "沉重的挫败",
+  "material.kubejs.failed_gobbers.encyclopedia": "“我本该死去，但我的伤口是门扉”",
 
   "modifier.csdytinker.kagutsuchi": "炎遁·加具土命",
-  "modifier.csdytinker.kagutsuchi.flavor": "この術は絶対にかわすことが出来ない!",
-  "modifier.csdytinker.kagutsuchi.description": "按下shift+右键为你的武器附上在目标被燃尽前不会消失的黑炎",
+  "modifier.csdytinker.kagutsuchi.flavor": "この目は闇がよく見える",
+  "modifier.csdytinker.kagutsuchi.description": "按下shift+右键为你的武器附上在目标被燃尽前不会消失的黑炎(未实装)",
 
   "modifier.csdytinker.agile": "灵活",
   "modifier.csdytinker.agile.flavor": "灵活就业者",
-  "modifier.csdytinker.agile.description": "在寒冷群系增加25%的箭矢伤害，在炎热群系增加25%的精准度。",
+  "modifier.csdytinker.agile.description": "在寒冷群系增施加虚弱，在炎热群系增加25%的箭矢伤害。",
+
   "modifier.csdytinker.electrified": "导电",
   "modifier.csdytinker.electrified.flavor": "怎么有一股焦味?。",
   "modifier.csdytinker.electrified.description": "攻击时将敌人麻痹2秒。",
+
   "modifier.csdytinker.conductive": "感电",
   "modifier.csdytinker.conductive.flavor": "小心有雷。",
   "modifier.csdytinker.conductive.description": "雷雨天时攻击30%引雷。",
+
   "modifier.csdytinker.exothermic": "热传导",
   "modifier.csdytinker.exothermic.flavor": "别和导热搞混了。",
   "modifier.csdytinker.exothermic.description": "在炎热群系攻击提供火焰附加",
+
   "modifier.csdytinker.fickle": "善变",
   "modifier.csdytinker.fickle.flavor": "善变，是我的本性",
   "modifier.csdytinker.fickle.description": "在寒冷群系每次攻击获得抗性提升，在炎热群系增加25%的近战伤害。",
+
   "modifier.csdytinker.eyesight": "明目",
   "modifier.csdytinker.eyesight.flavor": "究极版β-胡萝卜素！",
   "modifier.csdytinker.eyesight.description": "食用获得夜视。",
+
   "modifier.csdytinker.lightgel": "荧光胶冻",
   "modifier.csdytinker.lightgel.flavor": "可食用的神奇黏糊糊覆层。",
   "modifier.csdytinker.lightgel.description": "食用黏液覆层获得夜视。",
 
   "modifier.csdytinker.null1": "调律",
   "modifier.csdytinker.null1.flavor": "世界的调律者，已然苏醒",
-  "modifier.csdytinker.null1.description": "",
+  "modifier.csdytinker.null1.description": "未实装",
 
-  "modifier.csdytinker.arthur": "屠龙者的技艺",
-  "modifier.csdytinker.arthur.flavor": "一直...都不喜欢你",
-  "modifier.csdytinker.arthur.description": "将你基础伤害的50%转换为可以撕破混沌守卫一切防御的力量.远程武器会获得600点",
+  "modifier.csdytinker.last_whisper": "最后的轻语",
+  "modifier.csdytinker.last_whisper.flavor": "一直...都不喜欢你",
+  "modifier.csdytinker.last_whisper.description": "近战伤害的50%可以撕破绝大部分非斗法模组的特殊防御，远程武器则拥有100+20%面板伤害",
 
   "modifier.csdytinker.banishment": "放逐",
   "modifier.csdytinker.banishment.flavor": "伴随轻描淡写地划过，眸中的存在于记忆中消逝了",
@@ -117,7 +134,77 @@
 
   "modifier.csdytinker.shattered_dreams": "碎梦",
   "modifier.csdytinker.shattered_dreams.flavor": "笨拙打着拍子的陌生人都不见",
-  "modifier.csdytinker.shattered_dreams.description": "使你的武器在击中目标时具有一个非常cooooooooool的音效"
+  "modifier.csdytinker.shattered_dreams.description": "使你的武器在击中目标时具有一个非常cooooooooool的音效(未实装)",
 
+  "modifier.csdytinker.the_storm": "海水分开之日",
+  "modifier.csdytinker.the_storm.flavor": "再现分开红海的奇迹\n(与天宇的伤疤互斥)",
+  "modifier.csdytinker.the_storm.description": "摩西向海伸杖,耶和华便用大东风,使海水一夜退去,水便分开,海就成了干地.\n(出埃及记,14:21)",
 
+  "modifier.csdytinker.scarsky": "天宇的伤疤",
+  "modifier.csdytinker.scarsky.flavor": "太阳曾被分裂,此即其伤口\n(后果自负)",
+  "modifier.csdytinker.scarsky.description": "此术将复现太阳乖蹇的命运,愚蠢的学徒会在迫不得已时使用此术。",
+
+  "modifier.csdytinker.desecrate": "跌落凡尘",
+  "modifier.csdytinker.desecrate.flavor": "剥夺创造的权柄",
+  "modifier.csdytinker.desecrate.description": "使目标玩家变为冒险模式(未实装)",
+
+  "modifier.csdytinker.mercy": "仁慈",
+  "modifier.csdytinker.mercy.flavor": "仅在影中觅得",
+  "modifier.csdytinker.mercy.description": "拥有该词条的工具近战时无法致死，但在目标命该绝时会正常获得经验及掉落物",
+
+  "modifier.csdytinker.body_slam": "全身撞击",
+  "modifier.csdytinker.body_slam.flavor": "来自恶魔战士的传承",
+  "modifier.csdytinker.body_slam.description": "近战时额外造成等同于你护甲值的伤害",
+
+  "modifier.csdytinker.pulverize": "碾压",
+  "modifier.csdytinker.pulverize.flavor": "淘汰弱者",
+  "modifier.csdytinker.pulverize.description": "近战时处决生命值低于你最大生命值的敌人",
+
+  "modifier.csdytinker.coup_de_grace": "恩赐解脱",
+  "modifier.csdytinker.coup_de_grace.flavor": "神圣的一击，通过赐予对手死亡来向他们致以敬意",
+  "modifier.csdytinker.coup_de_grace.description": "你的近战攻击有15%的概率造成200%/325%/450%的伤害",
+
+  "modifier.csdytinker.apartheid": "孤傲",
+  "modifier.csdytinker.apartheid.flavor": "你的命运已经注定，直视我",
+  "modifier.csdytinker.apartheid.description": "近战时击碎目标所有的护甲，但你会受到等同于目标护甲的伤害\n(并不总是有效)",
+  "effect.csdytinker.faceme": "尽破",
+
+  "modifier.csdytinker.mutation": "Nidus",
+  "modifier.csdytinker.mutation.flavor": "你身体内部贪婪生长的致病蛆虫与菌状生长物能骗过死亡",
+  "modifier.csdytinker.mutation.description": "每次命中目标会为自己增加等同于等级的突变适性，若你的突变适性大于15层，则每次死亡时消耗十层以规避",
+  "effect.csdytinker.mutation": "突变适性",
+
+  "modifier.csdytinker.pumpkin_pie": "骨独的南瓜派",
+  "modifier.csdytinker.pumpkin_pie.flavor": "还有这么牛逼的？",
+  "modifier.csdytinker.pumpkin_pie.description": "每次命中目标会在屏幕中心随机播报弱智语录",
+
+  "modifier.csdytinker.tele_kill": "心灵折断",
+  "modifier.csdytinker.tele_kill.flavor": "于现实稳定锚未曾谋面的岁月中被广泛使用 ——Dr.Clef",
+  "modifier.csdytinker.tele_kill.description": "你的第十次攻击将刺穿生物的精神使其变为空壳",
+
+  "modifier.csdytinker.death": "死亡",
+  "modifier.csdytinker.death.flavor": "对满血的生物有1/4概率造成1/4最大生命值的伤害",
+  "modifier.csdytinker.death.description": "我就观看，见有一匹灰色马；骑在马上的，名字叫作死，阴府也随着他；有权柄赐给他们，可以用刀剑、饥荒、瘟疫、野兽，杀害地上四分之一的人。\n(启示录 6:8 和合本)",
+
+  "modifier.csdytinker.discontinuousness": "不连续存在",
+  "modifier.csdytinker.discontinuousness.flavor": "我们现在站在最尽头的天空下:7月20日，回归天空吧",
+  "modifier.csdytinker.discontinuousness.description": "主手持有时你会有1/7的概率规避受到的伤害",
+  "effect.csdytinker.discontinuousness": "不连续的存在",
+
+  "modifier.csdytinker.kamui": "神威",
+  "modifier.csdytinker.kamui.flavor": "虽然不知道你在期待什么，但这就是现实",
+  "modifier.csdytinker.kamui.description": "主手持有工具时每五秒进入虚化状态，处于虚化状态时不会受到伤害，攻击或拉弓会从虚化中退出。",
+  "effect.csdytinker.kamui": "神威",
+
+  "modifier.csdytinker.gone_angels": "离别的天使",
+  "modifier.csdytinker.gone_angels.flavor": "如果我能斩断那梦魇的咽喉...",
+  "modifier.csdytinker.gone_angels.description": "",
+
+  "modifier.csdytinker.sun_bless": "太阳祝福",
+  "modifier.csdytinker.sun_bless.flavor": "源于古老部族的祝福仪式，经研究表明祝福效果来自于仪式中使用的草药而非太阳神的赐福",
+  "modifier.csdytinker.sun_bless.description": "攻击时随机获得原版的正面药水效果，该词条等级最高2级",
+
+  "modifier.csdytinker.wave-particle_duality": "波粒二象性",
+  "modifier.csdytinker.wave-particle_duality.flavor": "超脱经典物理学范畴",
+  "modifier.csdytinker.wave-particle_duality.description": "你的工具攻击时不会造成基础伤害。攻击时额外造成1d300次0.1*等级的高频虚空伤害"
 }

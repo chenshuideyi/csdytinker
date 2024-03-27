@@ -2,6 +2,7 @@ package com.csdy.csdytinker.modifiers;
 
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.projectile.Projectile;
@@ -26,16 +27,15 @@ import javax.annotation.Nullable;
 
 public class Gamble extends NoLevelsModifier implements ProjectileHitModifierHook {
 
-
+    double[] array = {0.5, 2};
+    Random random = new Random();
     @Override
     public float getEntityDamage(@Nonnull IToolStackView tool, int level, @Nonnull ToolAttackContext context, float baseDamage, float damage) {
         LivingEntity target = context.getLivingTarget();
         if (target != null) {
-            double[] array = {0.5, 2};
-            Random random = new Random();
+
             int randomIndex = random.nextInt(array.length);
-            double randomNumber = array[randomIndex];
-            float floatValue = (float) randomNumber;
+            float floatValue = (float) array[randomIndex];
             return floatValue * damage;
 
         }
@@ -52,12 +52,10 @@ public class Gamble extends NoLevelsModifier implements ProjectileHitModifierHoo
     @Override
     public boolean onProjectileHitEntity(ModifierNBT modifiers, NamespacedNBT persistentData, ModifierEntry modifier, Projectile projectile, EntityHitResult hit, @Nullable LivingEntity attacker, @Nullable LivingEntity target) {
         if (projectile instanceof AbstractArrow arrow && target != null) {
-            double[] array = {0.5, 2};
-            Random random = new Random();
             int randomIndex = random.nextInt(array.length);
-            double randomNumber = array[randomIndex];
-            float floatNumber = (float) randomNumber;
-            arrow.setBaseDamage(arrow.getBaseDamage() * floatNumber);
+            float floatValue = (float) array[randomIndex];
+            arrow.setBaseDamage(arrow.getBaseDamage() * floatValue);
+            arrow.setRemoved(Entity.RemovalReason.KILLED);
         }
         return false;
     }

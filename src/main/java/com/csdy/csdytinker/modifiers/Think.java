@@ -1,10 +1,11 @@
 package com.csdy.csdytinker.modifiers;
 
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.MobType;
 import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
-import slimeknights.tconstruct.library.tools.nbt.ModifierNBT;
-import slimeknights.tconstruct.library.tools.nbt.NamespacedNBT;
-public class Kagutsuchi extends Modifier {
-    //加具土命
+
+public class Think extends Modifier {
 }
+

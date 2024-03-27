@@ -50,7 +50,7 @@ public class Lightgel extends Modifier implements GeneralInteractionModifierHook
                 world.playSound((Player)null, player.getX(), player.getY(), player.getZ(), SoundEvents.PLAYER_BURP, SoundSource.NEUTRAL, 0.5F, world.random.nextFloat() * 0.1F + 0.9F);
                 OverslimeModifier overslimeModifier = (OverslimeModifier) TinkerModifiers.overslime.get();
                 overslimeModifier.setOverslime(tool, overslimeModifier.getOverslime(tool)-15*level);
-                player.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 20+level*20, 1));
+                player.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 1200+level*1200, 1));
                 return true;
             }
         }

@@ -1,8 +1,25 @@
 {
   "default": [
     {
-      "name": "csdytinker:arthur",
+      "name": "csdytinker:mutation",
+      "level": 1
+    },
+    {
+      "name": "csdytinker:sun_bless",
+      "level": 1
+    },
+    {
+      "name": "csdytinker:wave-particle_duality",
+      "level": 1
+    },
+    {
+      "name": "csdytinker:discontinuousness",
+      "level": 1
+    },
+    {
+      "name": "csdytinker:kamui",
       "level": 1
     }
+
   ]
 }

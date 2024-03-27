@@ -14,7 +14,7 @@ public class TrinityModifier extends Modifier {
     public void addToolStats(ToolRebuildContext context,int level,ModifierStatsBuilder builder){
         //三位一体
 
-        double rate = Math.pow(0.6,level);
+        double rate = Math.pow(0.4,level);
         ToolStats.DRAW_SPEED.multiply(builder, 1 * rate);
         ToolStats.MINING_SPEED.multiply(builder, 1 * rate);
         ToolStats.DURABILITY.multiply(builder, 1 * rate);
