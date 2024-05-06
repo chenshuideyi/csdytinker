@@ -11,6 +11,7 @@
     "triplingbless": "#002FA7",
     "triplingcurse": "#002FA7",
     "banishment": "#003322",
+    "desecrate": "#003322",
     "last_whisper": "#001a27",
     "kagutsuchi": "#000000",
     "lightgel": "#00FF00",
@@ -32,8 +33,23 @@
     "death": "#615455",
     "discontinuousness": "#6cc7f6",
     "kamui": "#853430",
+    "kamui_plus": "#853430",
     "sun_bless": "#ffd600",
-    "wave-particle_duality": "#778899"
+    "wave-particle_duality": "#778899",
+    "infested": "#569a72",
+    "tendon": "#7e4e60",
+    "essence": "#6666ff",
+    "fluorescence": "#7df80a",
+    "vile_purge": "#64a63a",
+    "tik_tok": "#4d4d4d",
+    "cosmos": "#de605d",
+    "reliable": "#C0C0C0",
+    "corrosion_preventive": "#C0C0C0",
+    "exhibitionism": "#FFA500",
+    "tempered_skin": "#A9A9A9",
+    "life_line": "#1E90FF",
+    "velkhana": "#87CEFA",
+    "sptumn_cicada": "#d9a567"
   }
 }
 

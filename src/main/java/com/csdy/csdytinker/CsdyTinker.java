@@ -1,5 +1,5 @@
 package com.csdy.csdytinker;
- import com.csdy.csdytinker.entities.EntitiesRegister;
+ import com.csdy.csdytinker.items.ItemsRegister;
  import com.csdy.csdytinker.modifiers.Register.ModifiersRegister;
  import net.minecraft.data.DataGenerator;
  import net.minecraftforge.common.MinecraftForge;
@@ -11,7 +11,6 @@ package com.csdy.csdytinker;
  import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
  import com.csdy.csdytinker.effects.EffectsRegister;
  import com.csdy.csdytinker.effects.Event.ELivingEvent;
- import software.bernie.geckolib3.GeckoLib;
 
 @Mod(CsdyTinker.MOD_ID)
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -24,13 +23,13 @@ public class CsdyTinker {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
         //注册表
-        Items.ITEMS.register(bus);
+        ItemsRegister.ITEMS.register(bus);
         ModifiersRegister.MODIFIERS.register(bus);
         EffectsRegister.EFFECT.register(bus);
-        EntitiesRegister.ENTITY_TYPES.register(bus);
+        //EntitiesRegister.ENTITY_TYPES.register(bus);
 
         //初始化GeckoLib
-        GeckoLib.initialize();
+        //GeckoLib.initialize();
 
         MinecraftForge.EVENT_BUS.register(new ELivingEvent());
     }

@@ -3,6 +3,7 @@ package com.csdy.csdytinker.effects.Event;
 
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
+import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -35,4 +36,5 @@ public class ModifierEvents {
         ToolStack toolStack = ToolStack.from(itemStack);
         return toolStack.getModifierList();
     }
+
 }

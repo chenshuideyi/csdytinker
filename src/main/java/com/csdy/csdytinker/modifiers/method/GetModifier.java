@@ -27,6 +27,7 @@ public class GetModifier {
         }
         return 0;
     }
+
     public static List<ModifierEntry> getModifierEntry(ItemStack itemStack) {
         ToolStack toolStack = ToolStack.from(itemStack);
         return toolStack.getModifierList();

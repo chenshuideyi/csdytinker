@@ -15,4 +15,5 @@ public class EffectsRegister {
     public static final RegistryObject<MobEffect>FACEME = EFFECT.register("faceme",FaceMe::new);
     public static final RegistryObject<MobEffect>DISCONTINUOUSNESS = EFFECT.register("discontinuousness",Discontinuousness::new);
     public static final RegistryObject<MobEffect>KAMUI = EFFECT.register("kamui",Kamui::new);
+    public static final RegistryObject<MobEffect>KAMUIPLUS = EFFECT.register("kamui_plus",KamuiPlus::new);
 }

@@ -25,9 +25,14 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 import static com.google.common.primitives.Floats.max;
 
 public class LastWhisper extends NoLevelsModifier implements ProjectileHitModifierHook {
+    private DamageSource playerAttack;
+    boolean fuck = false;
 
     @Override
     public float getEntityDamage(@Nonnull IToolStackView tool, int level, @Nonnull ToolAttackContext context, float baseDamage, float damage) {
@@ -37,8 +42,23 @@ public class LastWhisper extends NoLevelsModifier implements ProjectileHitModifi
             target.setHealth(max(target.getHealth() - 0.5f * damage, 1));
             target.invulnerableTime = 0;
             if (target.getHealth() - 0.5f * damage <= 0) {
-                target.hurt(DamageSource.playerAttack((Player) context.getAttacker()), Float.MAX_VALUE);
-                target.setHealth(0);
+                if (target instanceof Player) {
+                    target.hurt(DamageSource.playerAttack((Player) getAttacker), Float.MAX_VALUE);
+                    target.die((DamageSource.playerAttack((Player) getAttacker)));
+                    target.setHealth(0);
+                    target.isDeadOrDying();
+                    target.kill();
+                    target.deathTime = 20;
+                }
+                else {
+                    target.hurt(DamageSource.playerAttack((Player) getAttacker), Float.MAX_VALUE);
+                    target.die((DamageSource.playerAttack((Player) getAttacker)));
+                    target.isDeadOrDying();
+                    target.setHealth(0);
+                    target.canUpdate(false);
+                    target.hurtMarked = false;
+                }
+                //我真的不想这么写，但是龙研和蔚蓝就他妈傻逼啊
             }
         }
         return 0.5f * damage;
@@ -58,18 +78,49 @@ public class LastWhisper extends NoLevelsModifier implements ProjectileHitModifi
             if (target.getHealth() - (100 + 0.2f * arrow.getBaseDamage()) <= 0) {
                 if (target.getType().getRegistryName().getNamespace().equals("draconicevolution")) {
                     for (var player : attacker.getServer().getPlayerList().getPlayers()) {
-                        player.connection.send(new ClientboundSetTitleTextPacket(new TextComponent("\"一直...都不喜欢你...\"")));
-                        player.connection.send(new ClientboundSetTitlesAnimationPacket(20, 30, 20));
+                        if (!fuck) {
+                            fuck = true;
+                            player.connection.send(new ClientboundSetTitleTextPacket(new TextComponent("苟延残喘又不肯认输的样子")));
+                            player.connection.send(new ClientboundSetTitlesAnimationPacket(20, 30, 20));
+                            TimerTask task = new TimerTask() {
+                                @Override
+                                public void run() {
+                                    player.connection.send(new ClientboundSetTitleTextPacket(new TextComponent("真丑陋啊")));
+                                    player.connection.send(new ClientboundSetTitlesAnimationPacket(20, 30, 20));
+                                    fuck = false;
+                                }
+
+                            };
+                            Timer timer = new Timer();
+                            timer.schedule(task, 1500);
+                        }
 
                     }
+                    target.die((DamageSource.playerAttack((Player) attacker)));
                     target.setHealth(0);
+                    target.isDeadOrDying();
+                    target.canUpdate(false);
+                    target.hurtMarked = false;
                     arrow.setRemoved(Entity.RemovalReason.KILLED);
                     //.hurt(DamageSource.OUT_OF_WORLD, 100000000) ;
                 }
                 target.invulnerableTime = 0;
-                arrow.setBaseDamage(arrow.getBaseDamage() + Float.MAX_VALUE);
-                target.setHealth(0);
-                //target.kill();
+                if (target instanceof Player) {
+                    target.hurt(DamageSource.playerAttack((Player) attacker), Float.MAX_VALUE);
+                    target.die((DamageSource.playerAttack((Player) attacker)));
+                    target.setHealth(0);
+                    target.isDeadOrDying();
+                    target.kill();
+                    target.deathTime = 20;
+                }
+                else {
+                    target.hurt(DamageSource.playerAttack((Player) attacker), Float.MAX_VALUE);
+                    target.die((DamageSource.playerAttack((Player) attacker)));
+                    target.isDeadOrDying();
+                    target.setHealth(0);
+                    target.canUpdate(false);
+                    target.hurtMarked = false;
+                }
                 arrow.setRemoved(Entity.RemovalReason.KILLED);
             } else {
                 arrow.setBaseDamage(arrow.getBaseDamage());

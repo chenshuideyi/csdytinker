@@ -1,6 +1,9 @@
 package com.csdy.csdytinker.modifiers;
 
+import com.csdy.csdytinker.util.C;
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -8,6 +11,7 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
@@ -15,6 +19,9 @@ import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.fml.common.Mod;
+import org.jetbrains.annotations.Nullable;
+import slimeknights.mantle.client.TooltipKey;
+import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.TinkerHooks;
@@ -25,6 +32,9 @@ import slimeknights.tconstruct.library.modifiers.util.ModifierHookMap;
 import slimeknights.tconstruct.library.tools.helper.ModifierUtil;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.nbt.ModDataNBT;
+
+import javax.annotation.Nonnull;
+import java.util.List;
 
 import static com.csdy.csdytinker.CsdyTinker.MOD_ID;
 
@@ -88,4 +98,16 @@ public class Scarsky extends NoLevelsModifier implements GeneralInteractionModif
         return 16;
     }
 
-}
+    /**@Override
+    public void addInformation(@Nonnull IToolStackView tool, int level, @Nullable Player player, @Nonnull List<Component> tooltip, @Nonnull TooltipKey tooltipKey, @Nonnull TooltipFlag tooltipFlag) {
+        if (player != null) {
+            ModDataNBT toolData = tool.getPersistentData();
+            //boolean harvest = tool.hasTag(TinkerTags.Items.HARVEST);
+            tooltip.add(applyStyle(new TranslatableComponent(C.GetColor("西伯利亚史蒂夫种植杂交水稻"))));
+            tooltip.add(applyStyle(new TranslatableComponent(C.GetColor("马里亚纳海沟卷起冥界风暴"))));
+            tooltip.add(applyStyle(new TranslatableComponent(C.GetColor("老奶奶钻电视机降下圣火"))));
+            tooltip.add(applyStyle(new TranslatableComponent(C.GetColor("战地医疗包蝉联届短跑冠军"))));
+            tooltip.add(applyStyle(new TranslatableComponent(C.GetColor("霍金在萝莉岛观看小鬼僵尸"))));
+        }
+    }
+*/}

@@ -31,8 +31,8 @@ public class WaveParticleDuality extends Modifier implements ProjectileHitModifi
         if (target != null) {
             int randomNumber = random.nextInt(300) + 1;
             do {
+                target.hurt(DamageSource.OUT_OF_WORLD, 1f * level);
                 target.invulnerableTime = 0;
-                target.hurt(DamageSource.OUT_OF_WORLD, 0.1f * level);
                 randomNumber--;
             } while (randomNumber > 0);
             //target.hurt(DamageSource.OUT_OF_WORLD, 0.1f * level * randomNumber);

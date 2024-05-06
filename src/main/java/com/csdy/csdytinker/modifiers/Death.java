@@ -28,11 +28,12 @@ public class Death extends NoLevelsModifier implements ProjectileHitModifierHook
     public float getEntityDamage(@Nonnull IToolStackView tool, int level, @Nonnull ToolAttackContext context, float baseDamage, float damage) {
         LivingEntity target = context.getLivingTarget();
         if (target != null) {
-            if (target.getHealth() == target.getHealth()) {
+            if (target.getHealth() == target.getMaxHealth()) {
                 int randomNumber = random.nextInt(4); // 生成0到3的随机数
                 if (randomNumber == 0) {
                     target.invulnerableTime = 0;
                     target.hurt(DamageSource.OUT_OF_WORLD,target.getMaxHealth()*0.75f);
+                    target.invulnerableTime = 0;
                 }
 
             }
@@ -49,11 +50,12 @@ public class Death extends NoLevelsModifier implements ProjectileHitModifierHook
     @Override
     public boolean onProjectileHitEntity(ModifierNBT modifiers, NamespacedNBT persistentData, ModifierEntry modifier, Projectile projectile, EntityHitResult hit, @Nullable LivingEntity attacker, @Nullable LivingEntity target) {
         if (projectile instanceof AbstractArrow arrow && target != null) {
-            if (target.getHealth() == target.getHealth()) {
+            if (target.getHealth() == target.getMaxHealth()) {
                 int randomNumber = random.nextInt(4); // 生成0到3的随机数
                 if (randomNumber == 0) {
                     target.invulnerableTime = 0;
                     target.hurt(DamageSource.OUT_OF_WORLD,target.getMaxHealth()*0.75f);
+                    target.invulnerableTime = 0;
 
                 }
                 arrow.setBaseDamage(arrow.getBaseDamage());

@@ -39,6 +39,10 @@ public class TeleKill extends NoLevelsModifier implements ProjectileHitModifierH
         LivingEntity target = context.getLivingTarget();
         LivingEntity player = context.getAttacker();
         Mob mob = (Mob) context.getLivingTarget();
+        if (target instanceof Player) {
+            sum = 0;
+            return damage;
+        }
         if (mob != null) {
             sum++;
             if (sum >= 10) {
@@ -47,25 +51,29 @@ public class TeleKill extends NoLevelsModifier implements ProjectileHitModifierH
 
             }
 
-
         }
         return damage;
     }
+
     @Override
     protected void registerHooks(ModifierHookMap.Builder hookBuilder) {
         hookBuilder.addHook(this, TinkerHooks.PROJECTILE_HIT);
     }
+
     @Override
     public boolean onProjectileHitEntity(ModifierNBT modifiers, NamespacedNBT persistentData, ModifierEntry modifier, Projectile projectile, EntityHitResult hit, @Nullable LivingEntity attacker, @Nullable LivingEntity target) {
         if (projectile instanceof AbstractArrow arrow && target != null) {
+            if (target instanceof Player) {
+                arrow.setRemoved(Entity.RemovalReason.KILLED);
+                return false;
+            }
             Mob mob = (Mob) target;
             sum++;
             if (sum >= 10) {
                 mob.setNoAi(true);
                 sum = 0;
-
+                arrow.setRemoved(Entity.RemovalReason.KILLED);
             }
-
 
         }
         return false;

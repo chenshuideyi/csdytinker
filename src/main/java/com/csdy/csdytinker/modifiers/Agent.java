@@ -1,7 +1,6 @@
 package com.csdy.csdytinker.modifiers;
 
-import com.csdy.csdytinker.entities.EntitiesRegister;
-import com.csdy.csdytinker.entities.MasterSpark;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -30,7 +29,7 @@ import slimeknights.tconstruct.library.tools.nbt.NamespacedNBT;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class Agent extends NoLevelsModifier implements ProjectileHitModifierHook {
-    @Override
+/**    @Override
     protected void registerHooks(ModifierHookMap.Builder hookBuilder) {
         hookBuilder.addHook(this, TinkerHooks.PROJECTILE_HIT);
     }
@@ -73,4 +72,4 @@ public class Agent extends NoLevelsModifier implements ProjectileHitModifierHook
 
         return false;
     }
-}
+*/}

@@ -18,7 +18,11 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import javax.annotation.Nonnull;
 
+import java.util.Objects;
+
 import static com.csdy.csdytinker.effects.EffectsRegister.FACEME;
+import static net.minecraft.world.entity.ai.attributes.Attributes.ARMOR;
+import static net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH;
 
 public class Apartheid extends NoLevelsModifier {
     //孤傲
@@ -28,7 +32,7 @@ public class Apartheid extends NoLevelsModifier {
         LivingEntity getAttacker = context.getAttacker();
         if (target != null) {
             float value = target.getArmorValue();
-            target.addEffect(new MobEffectInstance(FACEME.get(), 30000));
+            Objects.requireNonNull(target.getAttribute(ARMOR)).setBaseValue(0);
             if (target.getArmorValue() == 0) {
                 getAttacker.hurt(DamageSource.playerAttack((Player) context.getAttacker()), value);
             }

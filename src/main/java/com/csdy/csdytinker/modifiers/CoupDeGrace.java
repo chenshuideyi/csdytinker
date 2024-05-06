@@ -30,12 +30,13 @@ public class CoupDeGrace extends Modifier {
             Level world = target.getLevel();
             Random random = new Random();
             int randomNum = random.nextInt(100);
-            if (randomNum >= 85) {
+            if (randomNum >= 78) {
                 if (level > 3) {
                     level = 3;
                 }
                 target.invulnerableTime = 0;
                 target.hurt(DamageSource.playerAttack((Player) context.getAttacker()), damage * ((level - 1) * 1.25f) + damage);
+                target.invulnerableTime = 0;
                 world.playSound((Player)null, player.getX(), player.getY(), player.getZ(), SoundEvents.SHIELD_BREAK, SoundSource.NEUTRAL, 1.0F, 1.0F);
             }
         }

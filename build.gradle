@@ -16,7 +16,7 @@ plugins {
 apply plugin: 'net.minecraftforge.gradle'
 
 
-version = '1.2.2'
+version = '1.2.6hotfix'
 group = 'www.4399.com' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'csdytinker'
 
@@ -163,7 +163,7 @@ dependencies {
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.30'
 
     //GeckoLib
-    implementation fg.deobf('software.bernie.geckolib:geckolib-forge-1.18:3.0.57')
+
 
     //
 

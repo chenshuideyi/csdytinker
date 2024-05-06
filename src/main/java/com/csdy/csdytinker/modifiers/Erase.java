@@ -24,7 +24,7 @@ import slimeknights.tconstruct.library.tools.nbt.NamespacedNBT;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-public class Erase extends NoLevelsModifier implements ProjectileHitModifierHook{
+public class Erase extends NoLevelsModifier implements ProjectileHitModifierHook {
     //抹削
 
 
@@ -33,21 +33,25 @@ public class Erase extends NoLevelsModifier implements ProjectileHitModifierHook
         LivingEntity target = context.getLivingTarget();
         if (target != null) {
             target.invulnerableTime = 0;
-            target.hurt(DamageSource.OUT_OF_WORLD, 0.15f * target.getHealth()) ;
+            target.hurt(DamageSource.OUT_OF_WORLD, 0.15f * target.getHealth());
+            target.invulnerableTime = 0;
         }
         return damage;
     }
+
     @Override
     protected void registerHooks(ModifierHookMap.Builder hookBuilder) {
         hookBuilder.addHook(this, TinkerHooks.PROJECTILE_HIT);
     }
+
     @Override
     public boolean onProjectileHitEntity(ModifierNBT modifiers, NamespacedNBT persistentData, ModifierEntry modifier, Projectile projectile, EntityHitResult hit, @Nullable LivingEntity attacker, @Nullable LivingEntity target) {
         if (projectile instanceof AbstractArrow arrow && target != null) {
-                target.invulnerableTime = 0;
-                target.hurt(DamageSource.OUT_OF_WORLD, 0.15f * target.getHealth()) ;
-                arrow.setBaseDamage(arrow.getBaseDamage());
-                arrow.setRemoved(Entity.RemovalReason.KILLED);
+            target.invulnerableTime = 0;
+            target.hurt(DamageSource.OUT_OF_WORLD, 0.15f * target.getHealth());
+            target.invulnerableTime = 0;
+            arrow.setBaseDamage(arrow.getBaseDamage());
+            arrow.setRemoved(Entity.RemovalReason.KILLED);
         }
         return false;
     }

@@ -23,6 +23,8 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.Random;
 import java.util.Arrays;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class PumpkinPie extends NoLevelsModifier implements ProjectileHitModifierHook {
     String[] array = {
@@ -56,6 +58,7 @@ public class PumpkinPie extends NoLevelsModifier implements ProjectileHitModifie
         int randomIndex = random.nextInt(array.length);
         if (target != null) {
             for (var player : getAttacker.getServer().getPlayerList().getPlayers()) {
+
                     player.connection.send(new ClientboundSetTitleTextPacket(new TextComponent((array[randomIndex]))));
                     player.connection.send(new ClientboundSetTitlesAnimationPacket(5, 5, 10));
                 }
