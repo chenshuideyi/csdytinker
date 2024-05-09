@@ -27,7 +27,7 @@ import static com.csdy.csdytinker.RainbowText.makeColour2;
 import static com.google.common.primitives.Floats.max;
 
 public class TriplingCurse extends Modifier {
-    //int number = 0;
+    //内源之力
 
     @Override
     public void addVolatileData(ToolRebuildContext context, int level, ModDataNBT volatileData) {

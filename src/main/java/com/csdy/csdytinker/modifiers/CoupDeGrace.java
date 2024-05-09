@@ -25,7 +25,7 @@ public class CoupDeGrace extends Modifier {
     @Override
     public float getEntityDamage(@Nonnull IToolStackView tool, int level, @Nonnull ToolAttackContext context, float baseDamage, float damage) {
         LivingEntity target = context.getLivingTarget();
-        LivingEntity player = context.getAttacker();
+        Player Attacker = (Player) context.getAttacker();
         if (target != null) {
             Level world = target.getLevel();
             Random random = new Random();
@@ -35,17 +35,16 @@ public class CoupDeGrace extends Modifier {
                     level = 3;
                 }
                 target.invulnerableTime = 0;
-                target.hurt(DamageSource.playerAttack((Player) context.getAttacker()), damage * ((level - 1) * 1.25f) + damage);
+                target.hurt(DamageSource.playerAttack(Attacker), damage * ((level - 1) * 1.25f) + damage);
                 target.invulnerableTime = 0;
-                world.playSound((Player)null, player.getX(), player.getY(), player.getZ(), SoundEvents.SHIELD_BREAK, SoundSource.NEUTRAL, 1.0F, 1.0F);
+                world.playSound(Attacker, Attacker.getX(), Attacker.getY(), Attacker.getZ(), SoundEvents.SHIELD_BREAK, SoundSource.NEUTRAL, 1.0F, 1.0F);
             }
         }
         return damage;
     }
 
     public Component getDisplayName(@Nonnull IToolStackView tool, int level) {
-        if (level >= 3)
-            return getDisplayName(3);
+        if (level >= 3) return getDisplayName(3);
         return getDisplayName(level);
     }
 }

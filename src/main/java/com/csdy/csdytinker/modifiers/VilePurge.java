@@ -8,6 +8,7 @@ import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
 public class VilePurge extends Modifier {
+    //肮脏倾泻
     @Override
     public int afterEntityHit(IToolStackView tool, int level, ToolAttackContext context, float damageDealt) {
         LivingEntity target = context.getLivingTarget();
@@ -18,6 +19,6 @@ public class VilePurge extends Modifier {
             target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 60 * level, level - 1));
             return level;
         }
-        return 0; //返回值为对工具的额外耐久消耗，整型
+        return 0;
     }
 }

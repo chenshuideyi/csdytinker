@@ -7,6 +7,7 @@ import slimeknights.tconstruct.library.tools.stat.ModifierStatsBuilder;
 import slimeknights.tconstruct.library.tools.stat.ToolStats;
 
 public class TriplingBless extends NoLevelsModifier {
+    //心智之殁
 
     @Override
     public void addToolStats(ToolRebuildContext context, int level, ModifierStatsBuilder builder) {

@@ -25,7 +25,6 @@ public class Banishment extends NoLevelsModifier implements ProjectileHitModifie
     public float getEntityDamage(@Nonnull IToolStackView tool, int level, @Nonnull ToolAttackContext context, float baseDamage, float damage) {
         LivingEntity target = context.getLivingTarget();
         if (target != null) {
-
             target.setRemoved(Entity.RemovalReason.DISCARDED);
         }
         return 0;

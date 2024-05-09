@@ -21,6 +21,7 @@ import javax.annotation.Nullable;
 import java.util.Random;
 
 public class Death extends NoLevelsModifier implements ProjectileHitModifierHook {
+    //死亡
     Random random = new Random();
 
 

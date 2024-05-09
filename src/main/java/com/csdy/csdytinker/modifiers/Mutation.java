@@ -24,6 +24,7 @@ import javax.annotation.Nullable;
 import static com.csdy.csdytinker.effects.EffectsRegister.MUTATION;
 
 public class Mutation extends Modifier implements ProjectileHitModifierHook {
+    //Nidus
     @Override
     public int afterEntityHit(@NotNull IToolStackView tool, int level, ToolAttackContext context, float damageDealt) {
         LivingEntity target = context.getLivingTarget();

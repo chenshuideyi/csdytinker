@@ -23,6 +23,9 @@ public class Discontinuousness extends NoLevelsModifier implements ProjectileHit
             if (player.getMainHandItem() == stack && !tool.isBroken()) {
                 player.addEffect(new MobEffectInstance(DISCONTINUOUSNESS.get(), 1, 0));
             }
+            if (player.getOffhandItem() == stack && !tool.isBroken()) {
+                player.addEffect(new MobEffectInstance(DISCONTINUOUSNESS.get(), 1, 0));
+            }
         }
 
     }

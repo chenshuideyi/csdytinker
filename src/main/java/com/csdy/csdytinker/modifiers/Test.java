@@ -2,8 +2,13 @@ package com.csdy.csdytinker.modifiers;
 
 import com.csdy.csdytinker.modifiers.method.GetModifier;
 import com.csdy.csdytinker.util.C;
+import com.csdy.csdytinker.util.DieEntity;
+import com.csdy.csdytinker.util.KillledPlayerProcedure;
+import com.csdy.csdytinker.util.MyDeathScreen;
+import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.tags.FluidTags;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -45,19 +50,23 @@ import static com.csdy.csdytinker.modifiers.method.CsdyModifier.modifiers;
 
 public class Test extends Modifier implements ProjectileHitModifierHook {
     //测试用
-
-
+    @Override
+    public int afterEntityHit(IToolStackView tool, int level, ToolAttackContext context, float damageDealt) {
+        // target = context.getLivingTarget();
+        LivingEntity Attacker = context.getAttacker();
+        return 0;
+    }
     @Override
     public float getEntityDamage(@Nonnull IToolStackView tool, int level, @Nonnull ToolAttackContext context, float baseDamage, float damage) {
         LivingEntity target = context.getLivingTarget();
-        if (target != null) {
-            Level world = target.getLevel();
+        LivingEntity Attacker = context.getAttacker();
+        //if (target != null) {
             //target.setSleepingPos(target.getOnPos());
-            target.die(DamageSource.OUT_OF_WORLD);
-            target.hurt(DamageSource.playerAttack((Player) context.getAttacker()), Float.MAX_VALUE);
-            return 0 * damage;
+            //target.die(DamageSource.OUT_OF_WORLD);
+            //target.hurt(DamageSource.playerAttack((Player) context.getAttacker()), Float.MAX_VALUE);
+            //return 1;
             //target.hurt(DamageSource.OUT_OF_WORLD, 0.1f * target.getHealth()) ;
-        }
+        //}
         return damage;
     }
 
@@ -69,7 +78,7 @@ public class Test extends Modifier implements ProjectileHitModifierHook {
     @Override
     public boolean onProjectileHitEntity(ModifierNBT modifiers, NamespacedNBT persistentData, ModifierEntry modifier, Projectile projectile, EntityHitResult hit, @Nullable LivingEntity attacker, @Nullable LivingEntity target) {
         if (projectile instanceof AbstractArrow arrow && target != null) {
-
+            if (attacker.isEyeInFluid(FluidTags.WATER) && !attacker.isOnGround())
             target.setHealth(1);//target.getHealth());
             arrow.setBaseDamage(arrow.getBaseDamage() * 10);
 

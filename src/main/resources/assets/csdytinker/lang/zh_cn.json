@@ -194,7 +194,7 @@
 
   "modifier.csdytinker.discontinuousness": "不连续存在",
   "modifier.csdytinker.discontinuousness.flavor": "我们现在站在最尽头的天空下:7月20日，回归天空吧",
-  "modifier.csdytinker.discontinuousness.description": "主手持有时你会有7/20的概率规避受到的伤害",
+  "modifier.csdytinker.discontinuousness.description": "任意手持有时你会有7/20的概率规避受到的伤害",
   "effect.csdytinker.discontinuousness": "不连续的存在",
 
   "modifier.csdytinker.kamui": "神威",
@@ -204,7 +204,7 @@
 
   "modifier.csdytinker.kamui_plus": "双神威",
   "modifier.csdytinker.kamui_plus.flavor": "谢谢你...带土",
-  "modifier.csdytinker.kamui_plus.description": "主手持有时进入虚化状态，任何行为不会使你退出虚化，此状态无视混沌守卫激光",
+  "modifier.csdytinker.kamui_plus.description": "任意手持有时进入虚化状态，任何行为不会使你退出虚化，此状态无视混沌守卫激光",
   "effect.csdytinker.kamui_plus": "神威",
 
   "modifier.csdytinker.gone_angels": "离别的天使",
@@ -213,7 +213,7 @@
 
   "modifier.csdytinker.sun_bless": "太阳祝福",
   "modifier.csdytinker.sun_bless.flavor": "源于古老部族的祝福仪式，经研究表明祝福效果来自于仪式中使用的草药而非太阳神的赐福",
-  "modifier.csdytinker.sun_bless.description": "攻击时随机获得原版的正面药水效果，该词条等级最高2级",
+  "modifier.csdytinker.sun_bless.description": "攻击时随机获得原版的正面药水效果，该词条等级为2",
 
   "modifier.csdytinker.wave-particle_duality": "波粒二象性",
   "modifier.csdytinker.wave-particle_duality.flavor": "两朵乌云",
@@ -254,6 +254,7 @@
   "modifier.csdytinker.cosmos": "寰宇支配",
   "modifier.csdytinker.cosmos.flavor": "汝掌心中者，寰宇之力也",
   "modifier.csdytinker.cosmos.description": "你的剑不会损耗耐久并杀死触碰到的一切",
+  "death.attack.cosmos": "%1$s被积分至低维,而后回归实在界",
 
   "modifier.csdytinker.reliable": "可靠",
   "modifier.csdytinker.reliable.flavor": "令人安心的材料",
@@ -272,8 +273,8 @@
   "modifier.csdytinker.tempered_skin.description": "降低一点受到的伤害，但每次进入世界都需要重新装配",
 
   "modifier.csdytinker.life_line": "灵器",
-  "modifier.csdytinker.life_line.flavor": "自三千年前传奇人物留下的技艺",
-  "modifier.csdytinker.life_line.description": "你的工具会用耐久帮你承受部分伤害，每500耐久提供1%全减伤，最高60%",
+  "modifier.csdytinker.life_line.flavor": "以气御剑，相传历代工匠从遥远东方习得",
+  "modifier.csdytinker.life_line.description": "任意手持有时你的工具会用耐久帮你承受部分伤害，每500耐久提供1%全减伤，最高70%",
 
   "modifier.csdytinker.desecrate": "跌落凡尘",
   "modifier.csdytinker.desecrate.flavor": "剥夺创造的权柄",
@@ -289,9 +290,22 @@
 
   "modifier.csdytinker.sptumn_cicada": "春秋蝉",
   "modifier.csdytinker.sptumn_cicada.flavor": "青山落日,秋月春风。当真是朝如青丝暮成雪,是非成败转头空",
-  "modifier.csdytinker.sptumn_cicada.description": "死亡时若等级大于30，则消耗所有的经验免除死亡并传送至0，0，0",
+  "modifier.csdytinker.sptumn_cicada.description": "任意手持有时死亡时若等级大于30，则消耗所有的经验免除死亡并传送至0，0，0",
 
   "modifier.csdytinker.cutting_legs": "割腿",
   "modifier.csdytinker.cutting_legs.flavor": "肉断骨斩",
-  "modifier.csdytinker.cutting_legs.description": "你的近战攻击会让目标变成残废"
+  "modifier.csdytinker.cutting_legs.description": "你的近战攻击会让目标变成残废",
+
+  "modifier.csdytinker.the_forge_of_days": "The Forge Of Days",
+  "modifier.csdytinker.the_forge_of_days.flavor": "We call upon the Forge of Days, who remakes with fire, who ends what will not change, who will end all nights",
+  "modifier.csdytinker.the_forge_of_days.description": "虽然火焰让我遍体伤疤，但想炙伤我的肉体也是越来越难。我现在开始渐渐习惯火焰，如同一条龙或一块石头。如果我离开了火焰，我就会不停颤抖。",
+  "effect.csdytinker.forge": "铸炉",
+
+  "modifier.csdytinker.incandescence": "炽烈已极",
+  "modifier.csdytinker.incandescence.flavor": "已完成火成",
+  "modifier.csdytinker.incandescence.description": "我于荒漠中等待、于废墟中燃烧——金铁为水——土石化蜡——肉身成烟——来入我内，不复续存",
+
+  "modifier.csdytinker.water_forge": "水成",
+  "modifier.csdytinker.water_forge.flavor": "潮起，潮落",
+  "modifier.csdytinker.water_forge.description": "当玩家浸泡在水中时，工具每五秒会积累0.1点潮汐，每级增加5点上限。\n每1点潮汐增加10%拉弓速度，初速与0.05每秒回血。"
 }

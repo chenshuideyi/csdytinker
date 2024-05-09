@@ -29,6 +29,7 @@ import slimeknights.tconstruct.library.tools.nbt.NamespacedNBT;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class Agent extends NoLevelsModifier implements ProjectileHitModifierHook {
+    //天堂之矛 已废弃
 /**    @Override
     protected void registerHooks(ModifierHookMap.Builder hookBuilder) {
         hookBuilder.addHook(this, TinkerHooks.PROJECTILE_HIT);

@@ -24,6 +24,7 @@ import javax.annotation.Nullable;
 import static com.csdy.csdytinker.effects.EffectsRegister.KAMUIPLUS;
 
 public class Fluorescence extends NoLevelsModifier implements ProjectileHitModifierHook {
+    //荧光
     @Override
     public float getEntityDamage(@Nonnull IToolStackView tool, int level, @Nonnull ToolAttackContext context, float baseDamage, float damage) {
         LivingEntity target = context.getLivingTarget();

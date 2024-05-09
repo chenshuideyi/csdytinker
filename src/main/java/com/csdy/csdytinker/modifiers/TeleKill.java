@@ -32,6 +32,7 @@ import javax.annotation.Nullable;
 import static com.google.common.primitives.Floats.max;
 
 public class TeleKill extends NoLevelsModifier implements ProjectileHitModifierHook {
+    //心灵折断
     int sum = 0; // 初始化为0
 
     @Override

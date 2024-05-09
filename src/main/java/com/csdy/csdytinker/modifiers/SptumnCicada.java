@@ -12,16 +12,15 @@ import slimeknights.tconstruct.library.tools.nbt.ToolStack;
 import static java.lang.Math.min;
 
 public class SptumnCicada extends CsdyModifier {
+    //春秋蝉
     public boolean isNoLevels() {
         return true;
     }
 
     @Override
     public void LivingModifierAllDeath(LivingDeathEvent event) {
-        if (event.getEntity() instanceof Player player && player.experienceLevel >= 30) {
-            ItemStack item = player.getMainHandItem();
-            ToolStack tool = ToolStack.from(item);
-            if (GetModifier.getModifier(player, this) > 0) {
+        if (event.getEntity() instanceof Player player && player.experienceLevel >= 0) {
+            if (GetModifier.getModifier(player, this) > 0 || GetModifier.getOffHandLevel(player, this) > 0) {
                 player.experienceLevel = 0;
                 player.moveTo(0, 0, 0);
                 player.setHealth(5);

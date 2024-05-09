@@ -18,14 +18,13 @@ import java.util.TimerTask;
 import static com.csdy.csdytinker.effects.EffectsRegister.KAMUIPLUS;
 
 public class KamuiPlus extends NoLevelsModifier {
+    //双神威
     public void onInventoryTick(IToolStackView tool, int level, Level world, LivingEntity holder, int itemSlot, boolean isSelected, boolean isCorrectSlot, ItemStack stack) {
         if (holder instanceof Player player) {
-            if (player.getMainHandItem() == stack && !tool.isBroken()) {
-
+            if (player.getMainHandItem() == stack && !tool.isBroken())
                 player.addEffect(new MobEffectInstance(KAMUIPLUS.get(), 6000, 0));
-
-            }
-
+            if (player.getOffhandItem() == stack && !tool.isBroken())
+                player.addEffect(new MobEffectInstance(KAMUIPLUS.get(), 6000, 0));
         }
     }
 }

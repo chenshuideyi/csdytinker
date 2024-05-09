@@ -49,7 +49,11 @@
     "tempered_skin": "#A9A9A9",
     "life_line": "#1E90FF",
     "velkhana": "#87CEFA",
-    "sptumn_cicada": "#d9a567"
+    "sptumn_cicada": "#d9a567",
+    "cutting_legs": "#90234a",
+    "the_forge_of_days": "#f68a05",
+    "incandescence": "#f68a05",
+    "water_forge": "#4eabbd"
   }
 }
 

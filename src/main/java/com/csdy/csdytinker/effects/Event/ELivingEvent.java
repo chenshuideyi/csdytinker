@@ -4,8 +4,10 @@ import com.csdy.csdytinker.modifiers.SptumnCicada;
 import com.csdy.csdytinker.modifiers.method.CsdyModifier;
 import com.csdy.csdytinker.modifiers.method.GetModifier;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
@@ -23,6 +25,7 @@ import java.util.Random;
 import static com.csdy.csdytinker.CsdyTinker.MOD_ID;
 import static com.csdy.csdytinker.CsdyTinker.gatherData;
 import static com.csdy.csdytinker.effects.EffectsRegister.*;
+import static net.minecraft.world.effect.MobEffects.REGENERATION;
 
 @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 
@@ -123,7 +126,22 @@ public class ELivingEvent {
         }
     }
 
-
+    @SubscribeEvent
+    public static void TheForgeOfDays(TickEvent.PlayerTickEvent event) {
+        //白日铸炉
+        Player player= event.player;
+        if (player.hasEffect(FORGE.get())) {
+            if (player.isOnFire()){
+                player.addEffect(new MobEffectInstance(MobEffects.REGENERATION,1,3));
+                player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST,1,3));
+                player.heal(0.05F);
+            }
+            else{
+                player.addEffect(new MobEffectInstance(MobEffects.WEAKNESS,1,0));
+                player.addEffect(new MobEffectInstance(MobEffects.HUNGER,1,0));
+            }
+        }
+    }
 
 
 }

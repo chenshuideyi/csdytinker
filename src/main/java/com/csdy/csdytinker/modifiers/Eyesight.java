@@ -22,6 +22,7 @@ import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.nbt.ModDataNBT;
 
 public class Eyesight extends Modifier implements GeneralInteractionModifierHook {
+    //明目
     public Eyesight() {
     }
     protected void registerHooks(ModifierHookMap.Builder hookBuilder) {

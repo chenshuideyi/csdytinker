@@ -6,9 +6,9 @@ import slimeknights.tconstruct.library.tools.stat.ModifierStatsBuilder;
 import slimeknights.tconstruct.library.tools.stat.ToolStats;
 
 public class Forging extends Modifier {
+    //锻材
     @Override
     public void addToolStats(ToolRebuildContext context, int level, ModifierStatsBuilder builder) {
-        //锻材
             ToolStats.DRAW_SPEED.multiply(builder, 1 + (0.1 * level));
             ToolStats.MINING_SPEED.multiply(builder, 1 + (0.1 * level));
             ToolStats.DURABILITY.multiply(builder, 1 + (0.1 * level));

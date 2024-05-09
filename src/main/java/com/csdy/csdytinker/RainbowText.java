@@ -8,6 +8,7 @@ public class RainbowText {
     private static final ChatFormatting[] colour3;
     private static final ChatFormatting[] colour4;
     private static final ChatFormatting[] colour5;
+    private static final ChatFormatting[] colour6;
     public RainbowText() {
     }
 
@@ -44,11 +45,15 @@ public class RainbowText {
     public static String makeColour5(String input) {
         return formatting(input, colour5, 70.0);
     }
+    public static String makeColour6(String input) {
+        return formatting(input, colour6, 770.0);
+    }
     static {
         colour = new ChatFormatting[]{ChatFormatting.RED, ChatFormatting.GOLD, ChatFormatting.YELLOW, ChatFormatting.GREEN, ChatFormatting.AQUA, ChatFormatting.BLUE, ChatFormatting.LIGHT_PURPLE};
         colour2 = new ChatFormatting[]{ChatFormatting.RED, ChatFormatting.DARK_RED, ChatFormatting.YELLOW, ChatFormatting.GOLD, ChatFormatting.LIGHT_PURPLE,ChatFormatting.AQUA};
         colour3 = new ChatFormatting[]{ChatFormatting.RED, ChatFormatting.DARK_RED, ChatFormatting.DARK_PURPLE,ChatFormatting.LIGHT_PURPLE};
         colour4 = new ChatFormatting[]{ChatFormatting.DARK_AQUA,ChatFormatting.DARK_RED,ChatFormatting.BLUE};
         colour5 = new ChatFormatting[]{ChatFormatting.RED, ChatFormatting.GOLD,ChatFormatting.YELLOW,ChatFormatting.GREEN,ChatFormatting.AQUA,ChatFormatting.BLUE, ChatFormatting.LIGHT_PURPLE};
+        colour6 = new ChatFormatting[]{ChatFormatting.BLUE};
     }
 }

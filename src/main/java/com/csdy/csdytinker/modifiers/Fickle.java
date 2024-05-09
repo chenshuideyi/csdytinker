@@ -22,6 +22,7 @@ import static com.csdy.csdytinker.effects.EffectsRegister.MUTATION;
 import static net.minecraft.world.effect.MobEffects.DAMAGE_RESISTANCE;
 
 public class Fickle extends Modifier {
+    //善变
     @Override
     public float getEntityDamage(@Nonnull IToolStackView tool, int level, @Nonnull ToolAttackContext context, float baseDamage, float damage) {
         LivingEntity target = context.getLivingTarget();

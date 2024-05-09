@@ -30,6 +30,7 @@ import java.util.List;
 import static com.csdy.csdytinker.effects.EffectsRegister.KAMUIPLUS;
 
 public class Velkhana extends Modifier implements ProjectileHitModifierHook {
+    //Velkhana
     private final ResourceLocation KEY = new ResourceLocation(CsdyTinker.MOD_ID, "velkhana");
     @Override
     public void onRemoved(IToolStackView tool) {

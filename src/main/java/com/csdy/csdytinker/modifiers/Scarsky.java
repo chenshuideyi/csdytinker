@@ -40,7 +40,7 @@ import static com.csdy.csdytinker.CsdyTinker.MOD_ID;
 
 @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class Scarsky extends NoLevelsModifier implements GeneralInteractionModifierHook {
-
+    //天宇的伤疤
     public Scarsky() {
     }
 
@@ -98,16 +98,16 @@ public class Scarsky extends NoLevelsModifier implements GeneralInteractionModif
         return 16;
     }
 
-    /**@Override
-    public void addInformation(@Nonnull IToolStackView tool, int level, @Nullable Player player, @Nonnull List<Component> tooltip, @Nonnull TooltipKey tooltipKey, @Nonnull TooltipFlag tooltipFlag) {
-        if (player != null) {
-            ModDataNBT toolData = tool.getPersistentData();
-            //boolean harvest = tool.hasTag(TinkerTags.Items.HARVEST);
-            tooltip.add(applyStyle(new TranslatableComponent(C.GetColor("西伯利亚史蒂夫种植杂交水稻"))));
-            tooltip.add(applyStyle(new TranslatableComponent(C.GetColor("马里亚纳海沟卷起冥界风暴"))));
-            tooltip.add(applyStyle(new TranslatableComponent(C.GetColor("老奶奶钻电视机降下圣火"))));
-            tooltip.add(applyStyle(new TranslatableComponent(C.GetColor("战地医疗包蝉联届短跑冠军"))));
-            tooltip.add(applyStyle(new TranslatableComponent(C.GetColor("霍金在萝莉岛观看小鬼僵尸"))));
-        }
+    /**@Override public void addInformation(@Nonnull IToolStackView tool, int level, @Nullable Player player, @Nonnull List<Component> tooltip, @Nonnull TooltipKey tooltipKey, @Nonnull TooltipFlag tooltipFlag) {
+    if (player != null) {
+    ModDataNBT toolData = tool.getPersistentData();
+    //boolean harvest = tool.hasTag(TinkerTags.Items.HARVEST);
+    tooltip.add(applyStyle(new TranslatableComponent(C.GetColor("西伯利亚史蒂夫种植杂交水稻"))));
+    tooltip.add(applyStyle(new TranslatableComponent(C.GetColor("马里亚纳海沟卷起冥界风暴"))));
+    tooltip.add(applyStyle(new TranslatableComponent(C.GetColor("老奶奶钻电视机降下圣火"))));
+    tooltip.add(applyStyle(new TranslatableComponent(C.GetColor("战地医疗包蝉联届短跑冠军"))));
+    tooltip.add(applyStyle(new TranslatableComponent(C.GetColor("霍金在萝莉岛观看小鬼僵尸"))));
     }
-*/}
+    }
+     */
+}

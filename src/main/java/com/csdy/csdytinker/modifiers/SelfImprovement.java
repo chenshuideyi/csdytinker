@@ -23,7 +23,7 @@ import slimeknights.tconstruct.library.tools.stat.ToolStats;
 import javax.annotation.Nullable;
 
 public class SelfImprovement extends Modifier implements ProjectileHitModifierHook {
-
+    //未实装
     int atk = 0;
     int rage = 0;
     int min = 0;
@@ -38,7 +38,7 @@ public class SelfImprovement extends Modifier implements ProjectileHitModifierHo
                 }
             }
         }
-        return 0; //返回值为对工具的额外耐久消耗，整型
+        return 0;
     }
 
     @Override
@@ -84,9 +84,6 @@ public class SelfImprovement extends Modifier implements ProjectileHitModifierHo
         ToolStats.ACCURACY.multiply(builder, 1 + (0.04 * level * rage));
         ToolStats.PROJECTILE_DAMAGE.multiply(builder, 1 + (0.04 * level * rage));
     }
-
-
-
 
 
 }

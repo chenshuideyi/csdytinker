@@ -71,4 +71,8 @@ public class ModifiersRegister {
     public static final StaticModifier<Velkhana> VELKHANA_STATIC_MODIFIER = MODIFIERS.register("velkhana",Velkhana::new);
     public static final StaticModifier<SptumnCicada> SPTUMN_CICADA_STATIC_MODIFIER = MODIFIERS.register("sptumn_cicada",SptumnCicada::new);
     public static final StaticModifier<CuttingLegs> CUTTING_LEGS_STATIC_MODIFIER = MODIFIERS.register("cutting_legs",CuttingLegs::new);
+    public static final StaticModifier<Think> THINK_STATIC_MODIFIER = MODIFIERS.register("think",Think::new);
+    public static final StaticModifier<Incandescence> INCANDESCENCE_STATIC_MODIFIER = MODIFIERS.register("incandescence",Incandescence::new);
+    public static final StaticModifier<TheForgeOfDays> THE_FORGE_OF_DAYS_STATIC_MODIFIER = MODIFIERS.register("the_forge_of_days",TheForgeOfDays::new);
+    public static final StaticModifier<Water_forge> WATER_FORGE_STATIC_MODIFIER = MODIFIERS.register("water_forge",Water_forge::new);
 }

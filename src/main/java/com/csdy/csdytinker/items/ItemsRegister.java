@@ -19,5 +19,6 @@ public class ItemsRegister {
     public static final RegistryObject<Item> SWORDOFHISOU = ITEMS.register("sword_of_hisou", SwordofHisou::new);
     public static final RegistryObject<Item> UCHIHA = ITEMS.register("uchiha", Uchiha::new);
     public static final RegistryObject<Item> MASTERSPARK = ITEMS.register("master_spark", MasterSpark::new);
+    public static final RegistryObject<Item> DEATH = ITEMS.register("death", Death::new);
 }
 

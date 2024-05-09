@@ -7,12 +7,13 @@ import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
 public class Endless extends Modifier {
+    //未使用
     @Override
     public int afterEntityHit(IToolStackView tool, int level, ToolAttackContext context, float damageDealt) {
         LivingEntity target = context.getLivingTarget();
         if (target != null) {
 
         }
-        return 0; //返回值为对工具的额外耐久消耗，整型
+        return 0;
     }
 }

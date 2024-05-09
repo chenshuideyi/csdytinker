@@ -23,6 +23,7 @@ import javax.annotation.Nullable;
 import java.util.Random;
 
 public class WaveParticleDuality extends Modifier implements ProjectileHitModifierHook {
+    //波粒二象性
     Random random = new Random();
 
     @Override

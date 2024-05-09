@@ -17,7 +17,8 @@ import static com.csdy.csdytinker.CsdyTinker.MOD_ID;
 import static com.csdy.csdytinker.effects.EffectsRegister.DISCONTINUOUSNESS;
 
 public class TikTok extends Modifier {
-   // boolean tiktok = false;
+    //滴答
+    // boolean tiktok = false;
 
 
     //int i = 0;
@@ -29,7 +30,7 @@ public class TikTok extends Modifier {
         if (holder instanceof Player player) {
             if (player.getMainHandItem() == stack && !tool.isBroken()) {
 
-                tool.setDamage(tool.getDamage() + level*5);
+                tool.setDamage(tool.getDamage() + level * 5);
 
             }
         }

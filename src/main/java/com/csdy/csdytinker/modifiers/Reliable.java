@@ -7,6 +7,7 @@ import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import java.util.Random;
 
 public class Reliable extends NoLevelsModifier {
+    //可靠
     @Override
     public int onDamageTool(IToolStackView tool, int level, int amount, @javax.annotation.Nullable LivingEntity holder) {
         if (holder != null) {

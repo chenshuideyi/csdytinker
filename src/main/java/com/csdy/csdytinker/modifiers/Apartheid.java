@@ -29,12 +29,13 @@ public class Apartheid extends NoLevelsModifier {
     @Override
     public float getEntityDamage(@Nonnull IToolStackView tool, int level, @Nonnull ToolAttackContext context, float baseDamage, float damage) {
         LivingEntity target = context.getLivingTarget();
-        LivingEntity getAttacker = context.getAttacker();
+        //LivingEntity Attacker = context.getAttacker();
+        Player Attacker = (Player) context.getAttacker();
         if (target != null) {
             float value = target.getArmorValue();
             Objects.requireNonNull(target.getAttribute(ARMOR)).setBaseValue(0);
             if (target.getArmorValue() == 0) {
-                getAttacker.hurt(DamageSource.playerAttack((Player) context.getAttacker()), value);
+                Attacker.hurt(DamageSource.playerAttack(Attacker), value);
             }
         }
         return damage;

@@ -7,6 +7,7 @@ import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
 public class Exhibitionism extends NoLevelsModifier {
+    //暴露狂
     @Override
     public float getEntityDamage(IToolStackView tool, int level, ToolAttackContext context, float baseDamage, float damage) {
         Player player = context.getPlayerAttacker();

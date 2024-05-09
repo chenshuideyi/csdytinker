@@ -24,6 +24,7 @@ import javax.annotation.Nonnull;
 import java.util.List;
 
 public class MakeConcertedEfforts extends NoLevelsModifier {
+    //三重咒诅
     @Override
     public void addVolatileData(ToolRebuildContext context, int level, ModDataNBT volatileData) {
         IModDataView persistentData = context.getPersistentData();

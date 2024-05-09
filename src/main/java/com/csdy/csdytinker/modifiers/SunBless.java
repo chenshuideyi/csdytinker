@@ -28,7 +28,7 @@ import java.util.Random;
 import static com.csdy.csdytinker.effects.EffectsRegister.MUTATION;
 
 public class SunBless extends Modifier implements ProjectileHitModifierHook {
-
+    //太阳祝福
     Random random = new Random();
 
     @Override

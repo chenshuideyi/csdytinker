@@ -26,6 +26,7 @@ import javax.annotation.Nullable;
 import static com.google.common.primitives.Floats.max;
 
 public class Mercy extends NoLevelsModifier implements ProjectileHitModifierHook {
+    //仁慈
     @Override
     public float getEntityDamage(@Nonnull IToolStackView tool, int level, @Nonnull ToolAttackContext context, float baseDamage, float damage) {
         LivingEntity target = context.getLivingTarget();

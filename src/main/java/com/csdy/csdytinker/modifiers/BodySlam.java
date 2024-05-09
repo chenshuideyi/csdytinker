@@ -14,10 +14,10 @@ public class BodySlam extends NoLevelsModifier {
     @Override
     public float getEntityDamage(@Nonnull IToolStackView tool, int level, @Nonnull ToolAttackContext context, float baseDamage, float damage) {
         LivingEntity target = context.getLivingTarget();
-        LivingEntity getAttacker = context.getAttacker();
+        Player Attacker = (Player) context.getAttacker();
         if (target != null) {
             target.invulnerableTime = 0;
-            target.hurt(DamageSource.playerAttack((Player) context.getAttacker()), getAttacker.getArmorValue());
+            target.hurt(DamageSource.playerAttack(Attacker), Attacker.getArmorValue());
         }
         return damage;
     }

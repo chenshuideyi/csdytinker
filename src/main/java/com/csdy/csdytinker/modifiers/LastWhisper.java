@@ -31,28 +31,29 @@ import java.util.TimerTask;
 import static com.google.common.primitives.Floats.max;
 
 public class LastWhisper extends NoLevelsModifier implements ProjectileHitModifierHook {
+    //最后的轻语
     private DamageSource playerAttack;
     boolean fuck = false;
 
     @Override
     public float getEntityDamage(@Nonnull IToolStackView tool, int level, @Nonnull ToolAttackContext context, float baseDamage, float damage) {
         LivingEntity target = context.getLivingTarget();
-        LivingEntity getAttacker = context.getAttacker();
+        Player Attacker = (Player) context.getAttacker();
         if (target != null) {
             target.setHealth(max(target.getHealth() - 0.5f * damage, 1));
             target.invulnerableTime = 0;
             if (target.getHealth() - 0.5f * damage <= 0) {
                 if (target instanceof Player) {
-                    target.hurt(DamageSource.playerAttack((Player) getAttacker), Float.MAX_VALUE);
-                    target.die((DamageSource.playerAttack((Player) getAttacker)));
+                    target.hurt(DamageSource.playerAttack(Attacker), Float.MAX_VALUE);
+                    target.die((DamageSource.playerAttack(Attacker)));
                     target.setHealth(0);
                     target.isDeadOrDying();
                     target.kill();
                     target.deathTime = 20;
                 }
                 else {
-                    target.hurt(DamageSource.playerAttack((Player) getAttacker), Float.MAX_VALUE);
-                    target.die((DamageSource.playerAttack((Player) getAttacker)));
+                    target.hurt(DamageSource.playerAttack(Attacker), Float.MAX_VALUE);
+                    target.die((DamageSource.playerAttack(Attacker)));
                     target.isDeadOrDying();
                     target.setHealth(0);
                     target.canUpdate(false);
@@ -73,6 +74,7 @@ public class LastWhisper extends NoLevelsModifier implements ProjectileHitModifi
     @Override
     public boolean onProjectileHitEntity(ModifierNBT modifiers, NamespacedNBT persistentData, ModifierEntry modifier, Projectile projectile, EntityHitResult hit, @Nullable LivingEntity attacker, @Nullable LivingEntity target) {
         if (projectile instanceof AbstractArrow arrow && target != null) {
+            Player Attacker = (Player) attacker;
             arrow.setBaseDamage(arrow.getBaseDamage());
             target.setHealth(max((float) (target.getHealth() - (100 + 0.2f * arrow.getBaseDamage())), 1));
             if (target.getHealth() - (100 + 0.2f * arrow.getBaseDamage()) <= 0) {
@@ -96,7 +98,7 @@ public class LastWhisper extends NoLevelsModifier implements ProjectileHitModifi
                         }
 
                     }
-                    target.die((DamageSource.playerAttack((Player) attacker)));
+                    target.die((DamageSource.playerAttack(Attacker)));
                     target.setHealth(0);
                     target.isDeadOrDying();
                     target.canUpdate(false);
@@ -106,16 +108,16 @@ public class LastWhisper extends NoLevelsModifier implements ProjectileHitModifi
                 }
                 target.invulnerableTime = 0;
                 if (target instanceof Player) {
-                    target.hurt(DamageSource.playerAttack((Player) attacker), Float.MAX_VALUE);
-                    target.die((DamageSource.playerAttack((Player) attacker)));
+                    target.hurt(DamageSource.playerAttack(Attacker), Float.MAX_VALUE);
+                    target.die((DamageSource.playerAttack((Attacker))));
                     target.setHealth(0);
                     target.isDeadOrDying();
                     target.kill();
                     target.deathTime = 20;
                 }
                 else {
-                    target.hurt(DamageSource.playerAttack((Player) attacker), Float.MAX_VALUE);
-                    target.die((DamageSource.playerAttack((Player) attacker)));
+                    target.hurt(DamageSource.playerAttack(Attacker), Float.MAX_VALUE);
+                    target.die((DamageSource.playerAttack(Attacker)));
                     target.isDeadOrDying();
                     target.setHealth(0);
                     target.canUpdate(false);

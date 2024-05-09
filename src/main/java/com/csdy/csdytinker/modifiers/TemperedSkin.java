@@ -22,6 +22,7 @@ import static java.lang.Math.min;
 
 @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class TemperedSkin extends CsdyModifier {
+    //钢化皮肤
     static int Tempered = 0;
     public boolean isNoLevels() {
         return true;

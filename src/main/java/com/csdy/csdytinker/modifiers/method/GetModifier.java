@@ -27,7 +27,28 @@ public class GetModifier {
         }
         return 0;
     }
+    public static int getOffHandLevel(LivingEntity entity, Modifier modifier) {
+        return ModifierUtil.getModifierLevel(entity.getOffhandItem(), modifier.getId());
+    }
+    public static int getOffHandLeveltest(LivingEntity entity, Modifier modifier) {
+        for (ItemStack itemStack : entity.getAllSlots()) {
+            ToolStack toolStack = ToolStack.from(itemStack);
+            if (!toolStack.isBroken()) {
+                return ModifierUtil.getModifierLevel(entity.getOffhandItem(), modifier.getId());
+            }
+        }
+        return 0;
+    }
 
+    public static int getOffHandModifier(LivingEntity entity, Modifier modifier) {
+        for (ItemStack itemStack : entity.getAllSlots()) {
+            ToolStack toolStack = ToolStack.from(itemStack);
+            if (!toolStack.isBroken()) {
+                return toolStack.getModifierLevel(modifier);
+            }
+        }
+        return 0;
+    }
     public static List<ModifierEntry> getModifierEntry(ItemStack itemStack) {
         ToolStack toolStack = ToolStack.from(itemStack);
         return toolStack.getModifierList();

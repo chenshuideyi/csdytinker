@@ -12,12 +12,13 @@ import javax.annotation.Nonnull;
 import static com.google.common.primitives.Floats.max;
 
 public class Pulverize extends NoLevelsModifier {
+    //碾压
     @Override
     public float getEntityDamage(@Nonnull IToolStackView tool, int level, @Nonnull ToolAttackContext context, float baseDamage, float damage) {
         LivingEntity target = context.getLivingTarget();
-        LivingEntity getAttacker = context.getAttacker();
+        Player attacker = context.getPlayerAttacker();
         if (target != null) {
-            if (target.getHealth() - getAttacker.getMaxHealth() <= 0) {
+            if (target.getHealth() - attacker.getMaxHealth() <= 0) {
                 target.hurt(DamageSource.playerAttack((Player) context.getAttacker()), Float.MAX_VALUE);
                 target.setHealth(0);
             }

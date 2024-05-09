@@ -7,6 +7,7 @@ import slimeknights.tconstruct.library.tools.stat.ModifierStatsBuilder;
 import slimeknights.tconstruct.library.tools.stat.ToolStats;
 
 public class Tendon extends NoLevelsModifier {
+    //肌腱
     @Override
     public void addToolStats(ToolRebuildContext context, int level, ModifierStatsBuilder builder) {
         FloatToolStat drawSpeed = ToolStats.DRAW_SPEED;

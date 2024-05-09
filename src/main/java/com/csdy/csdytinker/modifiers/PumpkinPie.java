@@ -27,6 +27,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class PumpkinPie extends NoLevelsModifier implements ProjectileHitModifierHook {
+    //南瓜派
     String[] array = {
             "有人是新手就要照顾新手？",
             "为什么不加格雷科技？",

@@ -38,10 +38,12 @@ import slimeknights.tconstruct.tools.modifiers.slotless.OverslimeModifier;
 
 import static com.csdy.csdytinker.CsdyTinker.MOD_ID;
 import static net.minecraft.world.level.block.SeaPickleBlock.WATERLOGGED;
+
 import net.minecraft.world.level.block.state.StateHolder;
+
 @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class Right extends Modifier implements GeneralInteractionModifierHook {
-
+    //测试右键
     public Right() {
     }
 
@@ -100,7 +102,7 @@ public class Right extends Modifier implements GeneralInteractionModifierHook {
                             if (player.getLevel().getBlockState(block) == Blocks.KELP_PLANT.defaultBlockState()) {
                                 player.getLevel().setBlockAndUpdate(block, Blocks.AIR.defaultBlockState());
                             }
-                            if (player.getLevel().getFluidState(block) == Fluids.FLOWING_WATER.defaultFluidState()){
+                            if (player.getLevel().getFluidState(block) == Fluids.FLOWING_WATER.defaultFluidState()) {
                                 player.getLevel().setBlockAndUpdate(block, Blocks.AIR.defaultBlockState());
                             }
 

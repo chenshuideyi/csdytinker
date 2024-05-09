@@ -1,23 +1,23 @@
 {
   "default": [
     {
-      "name": "csdytinker:makeconcertedefforts1",
+      "name": "csdytinker:cosmos",
+      "level": 1
+    },
+    {
+      "name": "csdytinker:water_forge",
+      "level": 1
+    },
+    {
+      "name": "csdytinker:life_line",
+      "level": 1
+    },
+    {
+      "name": "csdytinker:incandescence",
       "level": 1
     },
     {
       "name": "csdytinker:cutting_legs",
-      "level": 1
-    },
-    {
-      "name": "csdytinker:life_line1",
-      "level": 1
-    },
-    {
-      "name": "csdytinker:sptumn_cicada1",
-      "level": 1
-    },
-    {
-      "name": "csdytinker:cosmos",
       "level": 1
     }
 

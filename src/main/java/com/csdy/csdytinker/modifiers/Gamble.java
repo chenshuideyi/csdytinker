@@ -17,18 +17,18 @@ import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.nbt.ModifierNBT;
 import slimeknights.tconstruct.library.tools.nbt.NamespacedNBT;
+
 import java.util.Random;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 
-
-
 public class Gamble extends NoLevelsModifier implements ProjectileHitModifierHook {
-
+    //赌博
     double[] array = {0.5, 2};
     Random random = new Random();
+
     @Override
     public float getEntityDamage(@Nonnull IToolStackView tool, int level, @Nonnull ToolAttackContext context, float baseDamage, float damage) {
         LivingEntity target = context.getLivingTarget();
@@ -41,7 +41,6 @@ public class Gamble extends NoLevelsModifier implements ProjectileHitModifierHoo
         }
         return 0;
     }
-
 
 
     @Override
