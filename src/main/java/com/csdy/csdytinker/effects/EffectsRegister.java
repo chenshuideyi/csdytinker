@@ -18,4 +18,5 @@ public class EffectsRegister {
     public static final RegistryObject<MobEffect>KAMUIPLUS = EFFECT.register("kamui_plus",KamuiPlus::new);
 
     public static final RegistryObject<MobEffect>FORGE = EFFECT.register("forge",Forge::new);
+    public static final RegistryObject<MobEffect>SKIN = EFFECT.register("skin",Skin::new);
 }

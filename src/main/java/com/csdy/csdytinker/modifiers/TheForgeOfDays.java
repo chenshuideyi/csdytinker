@@ -14,7 +14,8 @@ public class TheForgeOfDays extends NoLevelsModifier {
     @Override
     public void onInventoryTick(IToolStackView tool, int level, Level world, LivingEntity holder, int itemSlot, boolean isSelected, boolean isCorrectSlot, ItemStack stack) {
         if (holder instanceof Player player && isCorrectSlot) {
-            player.addEffect(new MobEffectInstance(FORGE.get(), level * 200, level - 1, false, false, false));
+            player.addEffect(new MobEffectInstance(FORGE.get(), 200, 0, false, false, false));
         }
     }
+
 }

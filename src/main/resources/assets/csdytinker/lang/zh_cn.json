@@ -297,7 +297,7 @@
   "modifier.csdytinker.cutting_legs.description": "你的近战攻击会让目标变成残废",
 
   "modifier.csdytinker.the_forge_of_days": "The Forge Of Days",
-  "modifier.csdytinker.the_forge_of_days.flavor": "We call upon the Forge of Days, who remakes with fire, who ends what will not change, who will end all nights",
+  "modifier.csdytinker.the_forge_of_days.flavor": "我们拜请白日铸炉：以火再造之神，终结不变之神，终结所有夜晚之神",
   "modifier.csdytinker.the_forge_of_days.description": "虽然火焰让我遍体伤疤，但想炙伤我的肉体也是越来越难。我现在开始渐渐习惯火焰，如同一条龙或一块石头。如果我离开了火焰，我就会不停颤抖。",
   "effect.csdytinker.forge": "铸炉",
 
@@ -307,5 +307,17 @@
 
   "modifier.csdytinker.water_forge": "水成",
   "modifier.csdytinker.water_forge.flavor": "潮起，潮落",
-  "modifier.csdytinker.water_forge.description": "当玩家浸泡在水中时，工具每五秒会积累0.1点潮汐，每级增加5点上限。\n每1点潮汐增加10%拉弓速度，初速与0.05每秒回血。"
+  "modifier.csdytinker.water_forge.description": "当玩家浸泡在水中时，工具每五秒会积累0.1点潮汐，每级增加5点上限。\n每1点潮汐增加10%拉弓速度，初速与0.05每秒回血。",
+
+  "modifier.csdytinker.perform-hebi": "双剑合璧",
+  "modifier.csdytinker.perform-hebi.flavor": "二天一流",
+  "modifier.csdytinker.perform-hebi.description": "若主副手同时拥有此强化，则使你的每次攻击75%二次追击，30%三次追击，15%四次追击",
+
+  "modifier.csdytinker.ecological": "生态",
+  "modifier.csdytinker.ecological.flavor": "How much wood couId a woodchuck chuck if a woodchuck couId chuck wood?",
+  "modifier.csdytinker.ecological.description": "你的工具会缓慢修复自身",
+
+  "modifier.csdytinker.spiky": "棘刺",
+  "modifier.csdytinker.spiky.flavor": "200%冰冷的刺！",
+  "modifier.csdytinker.spiky.description": "当你受到攻击时，对攻击者反弹等同于主手工具面板攻击的伤害"
 }

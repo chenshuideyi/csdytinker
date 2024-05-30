@@ -20,7 +20,7 @@ public class SptumnCicada extends CsdyModifier {
     @Override
     public void LivingModifierAllDeath(LivingDeathEvent event) {
         if (event.getEntity() instanceof Player player && player.experienceLevel >= 0) {
-            if (GetModifier.getModifier(player, this) > 0 || GetModifier.getOffHandLevel(player, this) > 0) {
+            if (GetModifier.getMainHandModifier(player, this) > 0 || GetModifier.getOffHandModifier(player, this) > 0) {
                 player.experienceLevel = 0;
                 player.moveTo(0, 0, 0);
                 player.setHealth(5);

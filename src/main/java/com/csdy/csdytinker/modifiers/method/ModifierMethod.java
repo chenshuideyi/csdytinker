@@ -20,10 +20,10 @@ import static com.csdy.csdytinker.CsdyTinker.MOD_ID;
 public class ModifierMethod {
     @SubscribeEvent
     public static void LivingModifierHurt(LivingHurtEvent event) {
-        if (event.getSource().getEntity() != null) {
+        if (event.getSource().getEntity() instanceof LivingEntity attacker) {
             for (Modifier modifier : CsdyModifier.modifiers) {
                 if (modifier instanceof CsdyModifier csdyModifier) {
-                    csdyModifier.LivingModifierHurt(event, event.getEntityLiving(), event.getAmount(), event.getSource());
+                    csdyModifier.LivingModifierHurt(event, event.getEntityLiving(),attacker,event.getAmount());
                 }
             }
         }
@@ -81,5 +81,14 @@ public class ModifierMethod {
         }
 
     }
-
+    @SubscribeEvent
+    public static void LivingModifierAllAttack(LivingAttackEvent event) {
+        if (event.getSource().getEntity() != null) {
+            for (Modifier modifier : CsdyModifier.modifiers) {
+                if (modifier instanceof CsdyModifier csdyModifier) {
+                    csdyModifier.LivingModifierAllAttack(event, event.getAmount(), event.getSource());
+                }
+            }
+        }
+    }
 }

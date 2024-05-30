@@ -75,4 +75,7 @@ public class ModifiersRegister {
     public static final StaticModifier<Incandescence> INCANDESCENCE_STATIC_MODIFIER = MODIFIERS.register("incandescence",Incandescence::new);
     public static final StaticModifier<TheForgeOfDays> THE_FORGE_OF_DAYS_STATIC_MODIFIER = MODIFIERS.register("the_forge_of_days",TheForgeOfDays::new);
     public static final StaticModifier<Water_forge> WATER_FORGE_STATIC_MODIFIER = MODIFIERS.register("water_forge",Water_forge::new);
+    public static final StaticModifier<Spiky> SPIKY_STATIC_MODIFIER = MODIFIERS.register("spiky",Spiky::new);
+    public static final StaticModifier<Ecological> ECOLOGICAL_STATIC_MODIFIER = MODIFIERS.register("ecological",Ecological::new);
+    public static final StaticModifier<Performhebi> PERFORMHEBI_STATIC_MODIFIER = MODIFIERS.register("perform-hebi",Performhebi::new);
 }

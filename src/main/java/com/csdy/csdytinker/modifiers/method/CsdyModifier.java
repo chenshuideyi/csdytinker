@@ -35,7 +35,7 @@ public class CsdyModifier extends Modifier implements ConditionalStatModifierHoo
     public void LivingModifierDamage(LivingDamageEvent event, LivingEntity entity, float amount, DamageSource source) {
     }
 
-    public void LivingModifierHurt(LivingHurtEvent event, LivingEntity entity,float amount, DamageSource source) {
+    public void LivingModifierHurt(LivingHurtEvent event, LivingEntity entity,LivingEntity attacker,float amount) {
     }
     public void LivingModifierAttack(LivingAttackEvent event, LivingEntity entity, float amount, DamageSource source) {
     }
@@ -44,6 +44,8 @@ public class CsdyModifier extends Modifier implements ConditionalStatModifierHoo
     public void LivingModifierAllDeath(LivingDeathEvent event){
     }
     public void LivingModifierAllDamage(LivingDamageEvent event,float amount) {
+    }
+    public void LivingModifierAllAttack(LivingAttackEvent event, float amount, DamageSource source) {
     }
     @Override
     public float modifyStat(IToolStackView iToolStackView, ModifierEntry modifierEntry, LivingEntity livingEntity, FloatToolStat floatToolStat, float v, float v1) {

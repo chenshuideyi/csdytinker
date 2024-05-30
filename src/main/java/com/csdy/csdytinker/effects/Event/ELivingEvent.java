@@ -36,7 +36,7 @@ public class ELivingEvent {
             if (player.hasEffect(MUTATION.get())) {
                 int Amplifier = (player.getEffect(MUTATION.get()).getAmplifier());
                 if (Amplifier >= 15) {
-                    player.heal(player.getMaxHealth());
+                    player.heal(65535);
                     MobEffectInstance newEffect = new MobEffectInstance(MUTATION.get(), Amplifier * 20, Amplifier - 10);
                     player.removeEffect(MUTATION.get());
                     player.addEffect(newEffect);
@@ -134,11 +134,12 @@ public class ELivingEvent {
             if (player.isOnFire()){
                 player.addEffect(new MobEffectInstance(MobEffects.REGENERATION,1,3));
                 player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST,1,3));
-                player.heal(0.05F);
+                player.heal(0.25F);
             }
             else{
-                player.addEffect(new MobEffectInstance(MobEffects.WEAKNESS,1,0));
-                player.addEffect(new MobEffectInstance(MobEffects.HUNGER,1,0));
+                player.addEffect(new MobEffectInstance(MobEffects.WEAKNESS,1,2));
+                player.addEffect(new MobEffectInstance(MobEffects.HUNGER,1,2));
+                //player.addEffect(new MobEffectInstance(MobEffects.CONFUSION,20,2));
             }
         }
     }

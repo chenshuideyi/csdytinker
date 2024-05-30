@@ -18,21 +18,20 @@ public class GetModifier {
     public static int getMainHandLevel(LivingEntity entity, Modifier modifier) {
         return ModifierUtil.getModifierLevel(entity.getMainHandItem(), modifier.getId());
     }
-    public static int getModifier(LivingEntity entity, Modifier modifier) {
-        for (ItemStack itemStack : entity.getAllSlots()) {
-            ToolStack toolStack = ToolStack.from(itemStack);
-            if (!toolStack.isBroken()) {
-                return toolStack.getModifierLevel(modifier);
-            }
+    public static int getMainHandModifier(LivingEntity entity, Modifier modifier) {
+        ToolStack toolStack = ToolStack.from(entity.getMainHandItem());
+        if (!toolStack.isBroken()) {
+            return toolStack.getModifierLevel(modifier);
         }
         return 0;
     }
     public static int getOffHandLevel(LivingEntity entity, Modifier modifier) {
+        if (entity.getOffhandItem().getDamageValue()!= 0) return ModifierUtil.getModifierLevel(entity.getOffhandItem(), modifier.getId());
         return ModifierUtil.getModifierLevel(entity.getOffhandItem(), modifier.getId());
     }
     public static int getOffHandLeveltest(LivingEntity entity, Modifier modifier) {
         for (ItemStack itemStack : entity.getAllSlots()) {
-            ToolStack toolStack = ToolStack.from(itemStack);
+            ToolStack toolStack = ToolStack.from(entity.getOffhandItem());
             if (!toolStack.isBroken()) {
                 return ModifierUtil.getModifierLevel(entity.getOffhandItem(), modifier.getId());
             }
@@ -41,12 +40,10 @@ public class GetModifier {
     }
 
     public static int getOffHandModifier(LivingEntity entity, Modifier modifier) {
-        for (ItemStack itemStack : entity.getAllSlots()) {
-            ToolStack toolStack = ToolStack.from(itemStack);
+            ToolStack toolStack = ToolStack.from(entity.getOffhandItem());
             if (!toolStack.isBroken()) {
                 return toolStack.getModifierLevel(modifier);
             }
-        }
         return 0;
     }
     public static List<ModifierEntry> getModifierEntry(ItemStack itemStack) {
