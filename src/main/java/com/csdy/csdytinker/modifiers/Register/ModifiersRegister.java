@@ -78,4 +78,5 @@ public class ModifiersRegister {
     public static final StaticModifier<Spiky> SPIKY_STATIC_MODIFIER = MODIFIERS.register("spiky",Spiky::new);
     public static final StaticModifier<Ecological> ECOLOGICAL_STATIC_MODIFIER = MODIFIERS.register("ecological",Ecological::new);
     public static final StaticModifier<Performhebi> PERFORMHEBI_STATIC_MODIFIER = MODIFIERS.register("perform-hebi",Performhebi::new);
+    public static final StaticModifier<Behand> BEHAND_STATIC_MODIFIER = MODIFIERS.register("behand",Behand::new);
 }

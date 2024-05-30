@@ -319,5 +319,9 @@
 
   "modifier.csdytinker.spiky": "棘刺",
   "modifier.csdytinker.spiky.flavor": "200%冰冷的刺！",
-  "modifier.csdytinker.spiky.description": "当你受到攻击时，对攻击者反弹等同于主手工具面板攻击的伤害"
+  "modifier.csdytinker.spiky.description": "当你受到攻击时，对攻击者反弹等同于主手工具面板攻击的伤害",
+
+  "modifier.csdytinker.behand": "斩“手”",
+  "modifier.csdytinker.behand.flavor": "骨肉分离！",
+  "modifier.csdytinker.behand.description": "当你近战攻击时，使目标双手物品替换为空气"
 }
